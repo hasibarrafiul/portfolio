@@ -24,12 +24,35 @@ html, body {
     }
 }
 
+@keyframes slideOutToLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
 .animateUp {
     animation: slideUp 1s ease-in-out forwards;
 }
 
 .animateBottom {
     animation: slideInFromBottom 1s ease-in-out forwards;
+}
+
+.slideLeft {
+    animation: slideOutToLeft 0.5s forwards; /* Slide out animation */
+}
+
+.slideRight {
+    animation: slideInFromRight 0.5s forwards; /* Slide in animation */
+}
+
+@keyframes slideOutToLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
 }
 
 .custom-background {
@@ -110,4 +133,44 @@ html, body {
     right: 0;
     width: 10%;
     height: auto;
+}
+
+.gate2 {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 10%;
+    height: auto;
+}
+
+.myInformationScreen {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+.myName, .myTitle, .myDescription {
+    font-family: "Jaro", sans-serif;
+    color: white;
+    text-align: center;
+    text-shadow: -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;
+  }
+
+.careerDiv {
+    position: absolute;
+    top: 0;
+    right: -100%; /* Start from off-screen to the right */
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease-in-out; /* Transition for moving into view */
+}
+
+.slideRight {
+    right: 0; /* Move into view */
 }
