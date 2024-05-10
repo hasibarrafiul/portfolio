@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.animateUp {
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+.animateBottom {
+    animation: slideInFromBottom 1s ease-in-out forwards;
+}
+
+.custom-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align children vertically */
+    background-image: url('/src/images/backgrounds/cloudbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: fixed; /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+}
+
+.loadingBar {
+    width: 40%;
+}
+
+.welcomeText {
+    font-family: "Jaro", sans-serif;
+    font-size: 4em;
+    color: black;
+}
+
+.welcomeScreen, .mainMenu {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation-fill-mode: forwards;
+}
+
+.mainMenu {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensures `mainMenu` takes full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Ensures that content is aligned at the bottom */
+    visibility: hidden;
+}
+
+.mainMenu.animateBottom {
+    visibility: visible;
+    animation: slideInFromBottom 1s ease-in-out forwards;
+}
+
+.platformContainer {
+    position: absolute;
+    bottom: -20px; /* Move down by 20 pixels */
+    width: 100%; /* Stretches across the entire width of `mainMenu` */
+    display: block;
+}
+
+.platform {
+    width: 100%; /* Ensures the platform image stretches across the container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.sprite {
+    position: absolute;
+    bottom: 85%; /* Adjust this percentage to position the sprite on top of the platform */
+    transform: translateX(-50%); /* Centers the sprite horizontally */
+    width: 10%; /* Scales the sprite size */
+    height: auto; /* Maintains aspect ratio */
+    transition: left 0.2s, transform 0.2s; /* Smoothens the sprite movement */
+}
+
+.gate {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    width: 10%;
+    height: auto;
+}
