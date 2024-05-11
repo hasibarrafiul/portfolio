@@ -42,23 +42,15 @@ function App() {
   console.log(spritePositionX);
   
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      if ((event.key === 'Enter' || event.key === ' ') && spritePositionX > 90) {
+    if (spritePositionX > 90) {
         setPageNumber(pageNumber + 1);
         setSpritePositionX(10);
       }
-      if ((event.key === 'Enter' || event.key === ' ') && spritePositionX < 10) {
+      if (spritePositionX < 10) {
         if(pageNumber>1){
           setPageNumber(pageNumber - 1);
           setSpritePositionX(90);
         }
-      }
-    };
-  
-    window.addEventListener('keydown', handleKeyDown);
-  
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [spritePositionX, pageNumber]);
 
@@ -87,7 +79,7 @@ function App() {
       </div>
       )}
       {pageNumber === 2 && (
-          <div className={`careerDiv ${pageNumber === 2 ? 'slideRight' : ''}`}>
+          <div className={`careerDiv ${pageNumber === 2 ? 'slideRight' : ''} custom-background2`}>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate" className="gate" />
