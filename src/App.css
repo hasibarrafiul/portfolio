@@ -190,3 +190,60 @@ html, body {
 .slideRight {
     right: 0; /* Move into view */
 }
+
+.seeMyCareer {
+    position: absolute;
+    bottom: 90%;
+    right: 12%;
+    width: 10%;
+    height: auto;
+}
+
+.backToMainScreen {
+    position: absolute;
+    bottom: 90%;
+    left: 12%;
+    width: 10%;
+    height: auto;
+}
+
+.study {
+    position: absolute;
+    bottom: 250%;
+    left: 5%;
+    width: 15%;
+    height: auto;
+}
+
+.dhrubok {
+    position: absolute;
+    bottom: 270%;
+    left: 22%;
+    width: 20%;
+    height: auto;
+}
+
+.tosFast {
+    position: absolute;
+    bottom: 220%;
+    left: 44%;
+    width: 20%;
+    height: auto;
+}
+
+.techrz {
+    position: absolute;
+    bottom: 320%;
+    left: 44%;
+    width: 20%;
+    height: auto;
+}
+
+.sysystem {
+    position: absolute;
+    bottom: 220%;
+    left: 66%;
+    width: 20%;
+    height: auto;
+}
+

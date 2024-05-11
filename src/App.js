@@ -4,6 +4,14 @@ import loadingGif from './images/ui/loading.gif';
 import platform from './images/assets/platform.jpg';
 import sprite from './images/assets/sprite.png';
 import gate from './images/assets/gate.png';
+import studyImage from './images/info/study.png';
+import dhrubokImage from './images/info/dhrubok.png';
+import tosFastImage from './images/info/tosfast.png';
+import techrz from './images/info/techrz.png';
+import sysystem from './images/info/sysystem.png';
+import seeMyCareer from './images/ui/seeMyCareer.png';
+import backToMainScreen from './images/ui/backToMainScreen.png';
+
 
 function App() {
   const [animate, setAnimate] = useState(false);
@@ -71,6 +79,7 @@ function App() {
         <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate" className="gate" />
+            <img src={seeMyCareer} alt="seeMyCareer" className="seeMyCareer" />
           <img src={sprite} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -82,6 +91,13 @@ function App() {
           <div className={`careerDiv ${pageNumber === 2 ? 'slideRight' : ''} custom-background2`}>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
+          <img src={studyImage} alt="study" className="study" />
+          <img src={dhrubokImage} alt="dhrubok" className="dhrubok" />
+          <img src={tosFastImage} alt="tosFast" className="tosFast" />
+          <img src={techrz} alt="techrz" className="techrz" />
+          <img src={sysystem} alt="sysystem" className="sysystem" />
+          
+          <img src={backToMainScreen} alt="backToMainScreen" className="backToMainScreen" />
           <img src={gate} alt="Gate" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
           <img src={sprite} alt="Sprite" className="sprite" style={{
