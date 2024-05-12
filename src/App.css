@@ -328,3 +328,23 @@ html, body {
     width: 30%;
     height: auto;
 }
+
+.gameProjects {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.billboard{
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 30%;
+    height: auto;
+}
