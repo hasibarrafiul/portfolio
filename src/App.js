@@ -260,6 +260,86 @@ function App() {
     window.addEventListener('wheel', handleWheel);
     return () => window.removeEventListener('wheel', handleWheel);
   }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
+
+  useEffect(() => {
+    let startY = null;
+    const handleTouchStart = (event) => {
+      startY = event.touches[0].clientY;  // Get the initial touch position
+    };
+
+    const handleTouchEnd = (event) => {
+      const endY = event.changedTouches[0].clientY;  // Get the final touch position
+      const deltaY = startY - endY;
+  
+      if (Math.abs(deltaY) < 30) {
+        // Ignore small movements
+        return;
+      }
+  
+      if (deltaY > 0) {  // Swipe up
+        if(pageNumber === 4 && billboard1position > 0){
+          setBillboard13position(billboard13position - 30);
+          setBillboard12position(billboard12position - 30);
+          setBillboard11position(billboard11position - 30);
+          setBillboard10position(billboard10position - 30);
+          setBillboard9position(billboard9position - 30);
+          setBillboard8position(billboard8position - 30);
+          setBillboard7position(billboard7position - 30);
+          setBillboard6position(billboard6position - 30);
+          setBillboard5position(billboard5position - 30);
+          setBillboard4position(billboard4position - 30);
+          setBillboard3position(billboard3position - 30);
+          setBillboard2position(billboard2position - 30);
+          setBillboard1position(billboard1position - 30);
+        } else if(pageNumber === 5 && certificate1position > 0){
+          setCertificate6position(certificate6position - 30);
+          setCertificate5position(certificate5position - 30);
+          setCertificate4position(certificate4position - 30);
+          setCertificate3position(certificate3position - 30);
+          setCertificate2position(certificate2position - 30);
+          setCertificate1position(certificate1position - 30);
+        }
+        else{
+          setSpritePositionX(prev => Math.min(100, prev + 30));
+        }
+        setMirror(false);
+      } else {  // Swipe down
+        if(pageNumber === 4 && billboard13position < 100){
+          setBillboard13position(billboard13position + 30);
+          setBillboard12position(billboard12position + 30);
+          setBillboard11position(billboard11position + 30);
+          setBillboard10position(billboard10position + 30);
+          setBillboard9position(billboard9position + 30);
+          setBillboard8position(billboard8position + 30);
+          setBillboard7position(billboard7position + 30);
+          setBillboard6position(billboard6position + 30);
+          setBillboard5position(billboard5position + 30);
+          setBillboard4position(billboard4position + 30);
+          setBillboard3position(billboard3position + 30);
+          setBillboard2position(billboard2position + 30);
+          setBillboard1position(billboard1position + 30);
+        } else if(pageNumber === 5 && certificate6position < 100){
+          setCertificate6position(certificate6position + 30);
+          setCertificate5position(certificate5position + 30);
+          setCertificate4position(certificate4position + 30);
+          setCertificate3position(certificate3position + 30);
+          setCertificate2position(certificate2position + 30);
+          setCertificate1position(certificate1position + 30);
+        }
+        else {
+          setSpritePositionX(prev => Math.max(0, prev - 30));
+        }
+        setMirror(true);
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchend', handleTouchEnd);
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
   
 
   return (
