@@ -36,192 +36,26 @@ import goBackToLicenceAndCertifications from './images/ui/goBackToLicenseAndCert
 import goToLink from './images/ui/goToLink.png';
 
 import billboard13 from './images/ui/board13.png';
-import billvoard12 from './images/ui/board12.png';
-import billvoard11 from './images/ui/board11.png';
-import billvoard10 from './images/ui/board10.png';
-import billvoard9 from './images/ui/board9.png';
-import billvoard8 from './images/ui/board8.png';
-import billvoard7 from './images/ui/board7.png';
-import billvoard6 from './images/ui/board6.png';
-import billvoard5 from './images/ui/board5.png';
-import billvoard4 from './images/ui/board4.png';
-import billvoard3 from './images/ui/board3.png';
-import billvoard2 from './images/ui/board2.png';
-import billvoard1 from './images/ui/board1.png';
+import billboard12 from './images/ui/board12.png';
+import billboard11 from './images/ui/board11.png';
+import billboard10 from './images/ui/board10.png';
+import billboard9 from './images/ui/board9.png';
+import billboard8 from './images/ui/board8.png';
+import billboard7 from './images/ui/board7.png';
+import billboard6 from './images/ui/board6.png';
+import billboard5 from './images/ui/board5.png';
+import billboard4 from './images/ui/board4.png';
+import billboard3 from './images/ui/board3.png';
+import billboard2 from './images/ui/board2.png';
+import billboard1 from './images/ui/board1.png';
 
+import certificate1 from './images/ui/certificate1.png';
+import certificate2 from './images/ui/certificate2.png';
+import certificate3 from './images/ui/certificate3.png';
+import certificate4 from './images/ui/certificate4.png';
+import certificate5 from './images/ui/certificate5.png';
+import certificate6 from './images/ui/certificate6.png';
 
-
-function LicenceList1() {
-  return (
-    <List sx={{ width: '100%', maxWidth: 360}}>
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-        <a href='https://drive.google.com/file/d/1rWJNxOrg1SJbCYPwnDOi6bCTMCOGOWfc/view' target="_blank" rel="noopener noreferrer">
-          <Avatar alt="ITEE" src={goToLink} />
-        </a>
-        </ListItemAvatar>
-        <ListItemText
-          primary="Fundamental IT Engineer Examination (FE) of Information Technology Engineers Examination (ITEE)"
-          secondary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Bangladesh Computer Council
-              </Typography>
-              <br></br>
-              {"Issued Apr 2022, Credential ID Passer#FE2022APR00025"}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-        <a href='https://drive.google.com/file/d/1XFcDl8lqaBjdTWos87FSRggodG_q3NpC/view' target="_blank" rel="noopener noreferrer">
-          <Avatar alt="Venturas" src={goToLink} />
-        </a>
-        </ListItemAvatar>
-        <ListItemText
-          primary="First ever robotics contest for college level students in Bangladesh"
-          secondary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Venturas Ltd
-              </Typography>
-              <br></br>
-              {'Issued Mar 2018'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-    </List>
-  );
-}
-
-function LicenceList2() {
-  return (
-    <List sx={{ width: '100%', maxWidth: 360}}>
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-        <a href='https://drive.google.com/file/d/15ASwqhEZbMuzEloYDl7E6LdJRaZVCVSg/view' target="_blank" rel="noopener noreferrer">
-          <Avatar alt="JPLT" src={goToLink} />
-        </a>
-        </ListItemAvatar>
-        <ListItemText
-          primary="Japanese Language Proficiency Test (JLPT) N5"
-          secondary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Japan Educational Exchanges and Services
-              </Typography>
-              <br></br>
-              {"Issued Feb 2024, Credential ID Credential ID N5A038566J"}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-        <a href='https://www.linkedin.com/learning/certificates/4adf7fb78d23b3361c14fb6a41b773a838e2d07fa2f51ca3c58cd126b1e0448e' target="_blank" rel="noopener noreferrer">
-          <Avatar alt="UnityPrep" src={goToLink} />
-        </a>
-        </ListItemAvatar>
-        <ListItemText
-          primary="Prepare for Unity Certification"
-          secondary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Linkdin Learning
-              </Typography>
-              <br></br>
-              {'Issued Feb 2024'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-    </List>
-  );
-}
-
-function LicenceList3() {
-  return (
-    <List sx={{ width: '100%', maxWidth: 360}}>
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-        <a href='https://www.linkedin.com/learning/certificates/b3a24e2ed0810c4434947ad22abb38e519559fed0ef1be240b6540df618252cd' target="_blank" rel="noopener noreferrer">
-          <Avatar alt="UnityEssential" src={goToLink} />
-        </a>
-        </ListItemAvatar>
-        <ListItemText
-          primary="Unity 2023 Essential Training"
-          secondary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                LinkedIn Learning
-              </Typography>
-              <br></br>
-              {"Issued Feb 2024"}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-        <a href='https://www.linkedin.com/learning/certificates/15ce63d12a8fd47329581bb4988b024cfc32a234f4a036c0c254a351133ceff8' target="_blank" rel="noopener noreferrer">
-          <Avatar alt="2Dgame" src={goToLink} />
-        </a>
-        </ListItemAvatar>
-        <ListItemText
-          primary="
-          2D Game Design and Development Essential Training"
-          secondary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Linkdin Learning
-              </Typography>
-              <br></br>
-              {'Issued Feb 2024'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-    </List>
-  );
-}
 
 function StackOverflowIcon(props) {
   return (
@@ -252,6 +86,13 @@ function App() {
   const [billboard2position, setBillboard2position] = useState(480);
   const [billboard1position, setBillboard1position] = useState(520);
 
+  const [certificate6position, setCertificate6position] = useState(40);
+  const [certificate5position, setCertificate5position] = useState(80);
+  const [certificate4position, setCertificate4position] = useState(120);
+  const [certificate3position, setCertificate3position] = useState(160);
+  const [certificate2position, setCertificate2position] = useState(200);
+  const [certificate1position, setCertificate1position] = useState(240);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimate(true);
@@ -262,6 +103,9 @@ function App() {
 
   useEffect(() => {
     if (pageNumber === 4) {
+      setSpritePositionX(50);
+    }
+    if (pageNumber === 5) {
       setSpritePositionX(50);
     }
   }
@@ -302,6 +146,13 @@ function App() {
             setBillboard3position(billboard3position - 3);
             setBillboard2position(billboard2position - 3);
             setBillboard1position(billboard1position - 3);
+          } else if(pageNumber === 5 && certificate1position > 0){
+            setCertificate6position(certificate6position - 3);
+            setCertificate5position(certificate5position - 3);
+            setCertificate4position(certificate4position - 3);
+            setCertificate3position(certificate3position - 3);
+            setCertificate2position(certificate2position - 3);
+            setCertificate1position(certificate1position - 3);
           }
           else{
             setSpritePositionX(prev => Math.min(100, prev + 3));
@@ -323,6 +174,13 @@ function App() {
             setBillboard3position(billboard3position + 3);
             setBillboard2position(billboard2position + 3);
             setBillboard1position(billboard1position + 3);
+          } else if(pageNumber === 5 && certificate6position < 100){
+            setCertificate6position(certificate6position + 3);
+            setCertificate5position(certificate5position + 3);
+            setCertificate4position(certificate4position + 3);
+            setCertificate3position(certificate3position + 3);
+            setCertificate2position(certificate2position + 3);
+            setCertificate1position(certificate1position + 3);
           }
           else {
             setSpritePositionX(prev => Math.max(0, prev - 3));
@@ -336,7 +194,7 @@ function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [pageNumber, billboard12position, billboard13position,spritePositionX]);
+  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
 
   useEffect(() => {
     const handleWheel = (event) => {
@@ -355,6 +213,13 @@ function App() {
             setBillboard3position(billboard3position - 3);
             setBillboard2position(billboard2position - 3);
             setBillboard1position(billboard1position - 3);
+          } else if(pageNumber === 5 && certificate1position > 0){
+            setCertificate6position(certificate6position - 3);
+            setCertificate5position(certificate5position - 3);
+            setCertificate4position(certificate4position - 3);
+            setCertificate3position(certificate3position - 3);
+            setCertificate2position(certificate2position - 3);
+            setCertificate1position(certificate1position - 3);
           }
           else{
             setSpritePositionX(prev => Math.min(100, prev + 3));
@@ -377,6 +242,13 @@ function App() {
             setBillboard3position(billboard3position + 3);
             setBillboard2position(billboard2position + 3);
             setBillboard1position(billboard1position + 3);
+          } else if(pageNumber === 5 && certificate6position < 100){
+            setCertificate6position(certificate6position + 3);
+            setCertificate5position(certificate5position + 3);
+            setCertificate4position(certificate4position + 3);
+            setCertificate3position(certificate3position + 3);
+            setCertificate2position(certificate2position + 3);
+            setCertificate1position(certificate1position + 3);
           }
           else {
             setSpritePositionX(prev => Math.max(0, prev - 3));
@@ -387,7 +259,7 @@ function App() {
 
     window.addEventListener('wheel', handleWheel);
     return () => window.removeEventListener('wheel', handleWheel);
-  }, [pageNumber, billboard12position, billboard13position,spritePositionX]);
+  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
   
 
   return (
@@ -471,96 +343,265 @@ function App() {
           <img src={goBackToSkills} alt="goBackToSkills" className="backWordSign" />
           <img src={goToLicenceAndCertifications} alt="goToLicenceAndCertifications" className="forwardSign" />
 
-          <a href="https://play.google.com/store/apps/details?id=com.techrz.skyrush" target="_blank" rel="github">
-          <img src={billboard13} alt="billboard" className="billboard" style={{
-            left: `${billboard13position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard13position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard13} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://play.google.com/store/apps/details?id=com.techrz.skyrush" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/Tanks-Game-Unity" target="_blank" rel="github">
-          <img src={billvoard12} alt="billboard" className="billboard" style={{
-            left: `${billboard12position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard12position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard12} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/Tanks-Game-Unity" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/FPS-Shooter-Using-Unreal-Engine-4" target="_blank" rel="github">
-          <img src={billvoard11} alt="billboard" className="billboard" style={{
-            left: `${billboard11position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard11position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard11} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/FPS-Shooter-Using-Unreal-Engine-4" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/Puzzle-Game-in-UnrealEngine" target="_blank" rel="github">
-          <img src={billvoard10} alt="billboard" className="billboard" style={{
-            left: `${billboard10position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard10position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard10} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/Puzzle-Game-in-UnrealEngine" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/Rolling-unreal-engine" target="_blank" rel="github">
-          <img src={billvoard9} alt="billboard" className="billboard" style={{
-            left: `${billboard9position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard9position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard9} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/Rolling-unreal-engine" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/Brick-Breaker-in-Unreal-Engine" target="_blank" rel="github">
-          <img src={billvoard8} alt="billboard" className="billboard" style={{
-            left: `${billboard8position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard8position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard8} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/Brick-Breaker-in-Unreal-Engine" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/Planet-Environment-VR-App" target="_blank" rel="github">
-          <img src={billvoard7} alt="billboard" className="billboard" style={{
-            left: `${billboard7position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard7position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard7} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/Planet-Environment-VR-App" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/AR-Solar-System-Mobile-App" target="_blank" rel="github">
-          <img src={billvoard6} alt="billboard" className="billboard" style={{
-            left: `${billboard6position}%`,
-            transform: `translateX(-50%)`
-          }} />
+          <div className="billboard" style={{
+              left: `${billboard6position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard6} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/AR-Solar-System-Mobile-App" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          </a>
-          <a href="https://github.com/hasibarrafiul/extreme-riders-game--client" target="_blank" rel="github">
-          <img src={billvoard5} alt="billboard" className="billboard" style={{
-            left: `${billboard5position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard5position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard5} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/extreme-riders-game--client" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/flappybird-using-react" target="_blank" rel="github">
-          <img src={billvoard4} alt="billboard" className="billboard" style={{
-            left: `${billboard4position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard4position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard4} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/flappybird-using-react" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/Space-Adventure-Game" target="_blank" rel="github">
-          <img src={billvoard3} alt="billboard" className="billboard" style={{
-            left: `${billboard3position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard3position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard3} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/Space-Adventure-Game" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/Break-Breaker-Construct-3" target="_blank" rel="github">
-          <img src={billvoard2} alt="billboard" className="billboard" style={{
-            left: `${billboard2position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard2position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard2} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/Break-Breaker-Construct-3" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
 
-          <a href="https://github.com/hasibarrafiul/tictac-game-using-react" target="_blank" rel="github">
-          <img src={billvoard1} alt="billboard" className="billboard" style={{
-            left: `${billboard1position}%`,
-            transform: `translateX(-50%)`
-          }} />
-          </a>
+          <div className="billboard" style={{
+              left: `${billboard1position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={billboard1} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://github.com/hasibarrafiul/tictac-game-using-react" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
           
           <img src={gate} alt="Gate" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
@@ -581,16 +622,125 @@ function App() {
           <img src={gate} alt="Gate2" className="gate2" />
           <img src={goBackToProjects} alt="goBackToProjects" className="backWordSign" />
           <img src={goToContactAndLinks} alt="goToContactAndLinks" className="forwardSign" />
-          <div className='certificatins1'>
-          {LicenceList1()}
+          
+          <div className="billboard" style={{
+              left: `${certificate6position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={certificate6} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://drive.google.com/file/d/1rWJNxOrg1SJbCYPwnDOi6bCTMCOGOWfc/view" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
           </div>
 
-          <div className='certificatins2'>
-          {LicenceList2()}
+          <div className="billboard" style={{
+              left: `${certificate5position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={certificate5} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://drive.google.com/file/d/1XFcDl8lqaBjdTWos87FSRggodG_q3NpC/view" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
           </div>
 
-          <div className='certificatins3'>
-          {LicenceList3()}
+          <div className="billboard" style={{
+              left: `${certificate4position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={certificate4} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://drive.google.com/file/d/15ASwqhEZbMuzEloYDl7E6LdJRaZVCVSg/view" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
+
+          <div className="billboard" style={{
+              left: `${certificate3position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={certificate3} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://www.linkedin.com/learning/certificates/4adf7fb78d23b3361c14fb6a41b773a838e2d07fa2f51ca3c58cd126b1e0448e?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BolQEDmGFSFGUq8cyG%2FAofw%3D%3D" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
+
+          <div className="billboard" style={{
+              left: `${certificate2position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={certificate2} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://www.linkedin.com/learning/certificates/b3a24e2ed0810c4434947ad22abb38e519559fed0ef1be240b6540df618252cd?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BolQEDmGFSFGUq8cyG%2FAofw%3D%3D" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
+          </div>
+
+          <div className="billboard" style={{
+              left: `${certificate1position}%`,
+              transform: `translateX(-50%)`
+          }}>
+            <img src={certificate1} alt="billboard" style={{ width: '100%', height: 'auto' }} />
+            <a href="https://www.linkedin.com/learning/certificates/15ce63d12a8fd47329581bb4988b024cfc32a234f4a036c0c254a351133ceff8?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BolQEDmGFSFGUq8cyG%2FAofw%3D%3D" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '45%',
+                cursor: 'pointer',
+                zIndex: 10
+              }}>
+            </a>
           </div>
           
           <img src={sprite} alt="Sprite" className="sprite" style={{
@@ -608,41 +758,40 @@ function App() {
           <img src={gate} alt="Gate2" className="gate2" />
           <img src={goBackToLicenceAndCertifications} alt="goBackToLicenceAndCertifications" className="backWordSign" />
           <div className="links">
-          <div>
-            <a href="https://github.com/hasibarrafiul" target="_blank" rel="noopener noreferrer">
-          <Fab variant="extended">
-            <GitHub sx={{ mr: 1 }} />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              GitHub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </Fab>
-          </a>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="https://www.linkedin.com/in/hasibarrafiul/" target="_blank" rel="noopener noreferrer">
-          <Fab variant="extended">
-            <LinkedIn sx={{ mr: 1 }} />
-              LinkedIn
-          </Fab>
-          </a>
+          <div className="link-item">
+              <a href="https://github.com/hasibarrafiul" target="_blank" rel="noopener noreferrer">
+                  <Fab variant="extended">
+                      <GitHub sx={{ mr: 1 }} />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GitHub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </Fab>
+              </a>
+          </div>
+          <div className="link-item">
+              <a href="https://www.linkedin.com/in/hasibarrafiul/" target="_blank" rel="noopener noreferrer">
+                  <Fab variant="extended">
+                      <LinkedIn sx={{ mr: 1 }} />
+                      LinkedIn
+                  </Fab>
+              </a>
           </div>
           <br></br>
-          <div>
-          <a href="https://stackoverflow.com/users/10941617/hasib-ar-rafiul-fahim" target="_blank" rel="noopener noreferrer">
-          <Fab variant="extended">
-            <StackOverflowIcon sx={{ mr: 1 }} />
-              Stack Overflow
-          </Fab>
-          </a>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="mailto:hasibarrafiulfahim@gmail.com">
-          <Fab variant="extended">
-            <Email sx={{ mr: 1 }} />
-            &nbsp;&nbsp;
-              Email
-              &nbsp;&nbsp;
-          </Fab>
-          </a>
+          <div className="link-item">
+              <a href="https://stackoverflow.com/users/10941617/hasib-ar-rafiul-fahim" target="_blank" rel="noopener noreferrer">
+                  <Fab variant="extended">
+                      <StackOverflowIcon sx={{ mr: 1 }} />
+                        Stack Overflow
+                  </Fab>
+              </a>
           </div>
-          <h1>Thank you for your time!</h1>
+          <div className="link-item">
+              <a href="mailto:hasibarrafiulfahim@gmail.com">
+                  <Fab variant="extended">
+                      <Email sx={{ mr: 1 }} />
+                      Email
+                  </Fab>
+              </a>
+          </div>
+          <h1 className='myName'>Thank you for your time! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
           </div>
           <img src={sprite} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,

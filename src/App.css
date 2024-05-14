@@ -159,13 +159,41 @@ html, body {
     height: auto;
 }
 
+@media (max-width: 768px) {
+    .myInformationScreen {
+        top: 50%;
+        left: 50%;
+        width: 95%; /* Slightly wider on smaller screens */
+        padding: 10px; /* Less padding on smaller devices */
+    }
+    .myName, .myTitle {
+        font-size: smaller; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .myInformationScreen {
+        top: 50%;
+        width: 100%; /* Full width on very small screens */
+        padding: 5px;
+    }
+    .myName, .myTitle {
+        font-size: smallest; /* Even smaller font size */
+    }
+}
+
+
 .myInformationScreen {
     position: absolute;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: -50%;  /* Center vertically in the middle of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect center alignment */
     z-index: 1;
-  }
+    width: 90%; /* Responsive width, you can adjust as necessary */
+    max-width: 600px; /* Maximum width of the container */
+    padding: 20px; /* Optional: Adds padding inside the container */
+    box-sizing: border-box; /* Ensures padding doesn't affect width calculations */
+}
 
 .myName, .myTitle, .myDescription {
     font-family: "Jaro", sans-serif;
@@ -202,6 +230,69 @@ html, body {
     height: auto;
 }
 
+@media (max-width: 768px) {
+    .study, .dhrubok, .tosFast, .techrz, .sysystem {
+        width: 30%; /* Increase width for better visibility on smaller screens */
+    }
+
+    .study {
+        left: 2%; /* Adjust positioning to fit small screens */
+        bottom: 10vh;
+    }
+
+    .dhrubok {
+        left: 35%;
+        bottom: 15vh;
+    }
+
+    .tosFast, .techrz {
+        left: 2%; /* Stack elements vertically if needed */
+        bottom: 20vh;
+    }
+
+    .techrz {
+        bottom: 30vh;
+    }
+
+    .sysystem {
+        left: 35%;
+        bottom: 25vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .study, .dhrubok, .tosFast, .techrz, .sysystem {
+        width: 40%; /* Further increase width for very small screens */
+    }
+
+    .study {
+        left: 5%; /* Center more as screen narrows */
+        bottom: 5vh;
+    }
+
+    .dhrubok, .tosFast, .techrz, .sysystem {
+        left: 55%; /* Adjust all others to be more centered */
+        bottom: 10vh; /* Stack with increasing spacing */
+    }
+
+    .dhrubok {
+        bottom: 15vh;
+    }
+
+    .tosFast {
+        bottom: 25vh;
+    }
+
+    .techrz {
+        bottom: 35vh;
+    }
+
+    .sysystem {
+        bottom: 45vh;
+    }
+}
+
+
 .study {
     position: absolute;
     bottom: 250%;
@@ -220,7 +311,7 @@ html, body {
 
 .tosFast {
     position: absolute;
-    bottom: 320%;
+    bottom: 300%;
     left: 44%;
     width: 20%;
     height: auto;
@@ -349,12 +440,38 @@ html, body {
     height: auto;
 }
 
+@media (max-width: 1024px) { /* For tablets */
+    .certifications1 {
+        bottom: 5vh; /* Less vertical offset */
+        width: 40%; /* Slightly larger to maintain readability */
+    }
+}
+
+@media (max-width: 768px) { /* For smaller tablets and large phones */
+    .certifications1 {
+        position: relative; /* Change positioning on smaller devices */
+        bottom: auto; /* Remove bottom positioning */
+        top: 10vh; /* Add some top margin to avoid overlapping with other elements */
+        left: 50%; /* Center align */
+        transform: translateX(-50%); /* Perfect centering */
+        width: 80%; /* Increase width to use more screen space */
+    }
+}
+
+@media (max-width: 480px) { /* For mobile phones */
+    .certifications1 {
+        top: 5vh;
+        width: 95%; /* Make it nearly full width */
+    }
+}
+
 .certificatins1 {
     position: absolute;
     bottom: 200%;
     left: 5%;
     width: 30%;
     height: auto;
+    max-width: 360px;
 }
 
 .certificatins2 {
@@ -375,8 +492,45 @@ html, body {
 
 .links {
     position: absolute;
-    bottom: 200%;
-    left: 35%;
-    width: 30%;
-    height: auto;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: space-around; /* Distributes space around items */
+    align-items: start; /* Aligns items to start of the flex line */
+    bottom: 50vh;
+    left: 10vh;
+    right: 0;
+    margin: 0 auto;
+    width: 40%; /* Adjust the width as needed */
+}
+
+.link-item {
+    width: 40%; /* Sets width to less than half to ensure two items per row */
+    margin: 2.5%; /* Adds space around the items */
+}
+
+@media (max-width: 1024px) { /* For tablets */
+    .links {
+        position: absolute;
+        left: 10%; /* Adjust left to slightly more center */
+        width: 60%; /* Increase width for better touch targets */
+        bottom: 40vh;
+    }
+}
+
+@media (max-width: 768px) { /* For smaller tablets and large phones */
+    .links {
+        position: absolute; /* Switching from absolute to relative for better flow */
+        bottom: 50vh;
+        left: 60%; /* Center the links */
+        transform: translateX(-50%); /* Ensure it's perfectly centered */
+        width: 80%; /* Use more screen width */
+    }
+}
+
+@media (max-width: 480px) { /* For mobile phones */
+    .links {
+        width: 95%; /* Nearly full width to utilize small screen space */
+        margin-bottom: 5vh; /* Add some space below */
+        bottom: 50vh;
+    }
 }
