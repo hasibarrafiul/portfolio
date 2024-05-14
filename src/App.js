@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
 import ProgressBar from "@ramonak/react-progress-bar";
 import Fab from '@mui/material/Fab';
 import Email from '@mui/icons-material/Email';
@@ -17,6 +10,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 import loadingGif from './images/ui/loading.gif';
 import platform from './images/assets/platform.jpg';
 import sprite from './images/assets/sprite.png';
+import spriteRun from './images/assets/spriteRun.png';
 import gate from './images/assets/gate.png';
 import studyImage from './images/info/study.png';
 import dhrubokImage from './images/info/dhrubok.png';
@@ -33,7 +27,6 @@ import goToLicenceAndCertifications from './images/ui/goToLicenceAndCertificatio
 import goBackToProjects from './images/ui/goBackToProjects.png';
 import goToContactAndLinks from './images/ui/goToContactAndLinks.png';
 import goBackToLicenceAndCertifications from './images/ui/goBackToLicenseAndCertifications.png';
-import goToLink from './images/ui/goToLink.png';
 
 import billboard13 from './images/ui/board13.png';
 import billboard12 from './images/ui/board12.png';
@@ -69,6 +62,7 @@ function App() {
   const [animate, setAnimate] = useState(false);
   const [spritePositionX, setSpritePositionX] = useState(50);
   const [mirror, setMirror] = useState(false);
+  const [spriteImage, setSpriteImage] = useState(sprite);
   const [pageNumber, setPageNumber] = useState(1);
   const [prevPage, setPrevPage] = useState(0);
 
@@ -102,6 +96,14 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setSpriteImage(sprite);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [spriteImage]);
+
+  useEffect(() => {
     if (pageNumber === 4) {
       setSpritePositionX(50);
     }
@@ -130,6 +132,7 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
+      setSpriteImage(spriteRun);
       switch (event.key) {
         case 'ArrowRight':
           if(pageNumber === 4 && billboard1position > 0){
@@ -198,6 +201,7 @@ function App() {
 
   useEffect(() => {
     const handleWheel = (event) => {
+      setSpriteImage(spriteRun);
         if(event.deltaY > 0){
           if(pageNumber === 4 && billboard1position > 0){
             setBillboard13position(billboard13position - 3);
@@ -276,7 +280,8 @@ function App() {
         return;
       }
   
-      if (deltaY > 0) {  // Swipe up
+      if (deltaY > 0) {
+        setSpriteImage(spriteRun);
         if(pageNumber === 4 && billboard1position > 0){
           setBillboard13position(billboard13position - 30);
           setBillboard12position(billboard12position - 30);
@@ -303,7 +308,8 @@ function App() {
           setSpritePositionX(prev => Math.min(100, prev + 30));
         }
         setMirror(false);
-      } else {  // Swipe down
+      } else {
+        setSpriteImage(spriteRun);
         if(pageNumber === 4 && billboard13position < 100){
           setBillboard13position(billboard13position + 30);
           setBillboard12position(billboard12position + 30);
@@ -360,7 +366,7 @@ function App() {
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate" className="gate" />
             <img src={seeMyCareer} alt="seeMyCareer" className="forwardSign" />
-          <img src={sprite} alt="Sprite" className="sprite" style={{
+          <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
           }} />
@@ -381,7 +387,7 @@ function App() {
           <img src={goToSkillPage} alt="goToSkillPage" className="forwardSign" />
           <img src={gate} alt="Gate" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
-          <img src={sprite} alt="Sprite" className="sprite" style={{
+          <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
           }} />
@@ -408,7 +414,7 @@ function App() {
           <img src={goToProjects} alt="goToProjects" className="forwardSign" />
           <img src={gate} alt="Gate" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
-          <img src={sprite} alt="Sprite" className="sprite" style={{
+          <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
           }} />
@@ -685,7 +691,7 @@ function App() {
           
           <img src={gate} alt="Gate" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
-          <img src={sprite} alt="Sprite" className="sprite" style={{
+          <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
           }} />
@@ -823,7 +829,7 @@ function App() {
             </a>
           </div>
           
-          <img src={sprite} alt="Sprite" className="sprite" style={{
+          <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
           }} />
@@ -873,7 +879,7 @@ function App() {
           </div>
           <h1 className='myName'>Thank you for your time! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
           </div>
-          <img src={sprite} alt="Sprite" className="sprite" style={{
+          <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
           }} />
