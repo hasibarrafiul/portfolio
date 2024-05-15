@@ -185,7 +185,7 @@ html, body {
 
 .myInformationScreen {
     position: absolute;
-    top: -50%;  /* Center vertically in the middle of the viewport */
+    top: -20%;  /* Center vertically in the middle of the viewport */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfect center alignment */
     z-index: 1;

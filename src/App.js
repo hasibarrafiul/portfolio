@@ -7,7 +7,9 @@ import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import SvgIcon from '@mui/material/SvgIcon';
 
-import loadingGif from './images/ui/loading.gif';
+import loadingGif from './images/assets/loading.gif';
+import SwipeLeft  from './images/assets/swipeLeft.gif';
+import SwipeRight  from './images/assets/swipeRight.gif';
 import platform from './images/assets/platform.jpg';
 import sprite from './images/assets/sprite.png';
 import spriteRun from './images/assets/spriteRun.png';
@@ -266,21 +268,21 @@ function App() {
   }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
 
   useEffect(() => {
-    let startY = null;
+    let startX = null;
     const handleTouchStart = (event) => {
-      startY = event.touches[0].clientY;  // Get the initial touch position
+      startX = event.touches[0].clientX;
     };
 
     const handleTouchEnd = (event) => {
-      const endY = event.changedTouches[0].clientY;  // Get the final touch position
-      const deltaY = startY - endY;
+      const endX = event.changedTouches[0].clientX;
+      const deltaX = startX - endX;
   
-      if (Math.abs(deltaY) < 30) {
+      if (Math.abs(deltaX) < 30) {
         // Ignore small movements
         return;
       }
   
-      if (deltaY > 0) {
+      if (deltaX < 0) {
         setSpriteImage(spriteRun);
         if(pageNumber === 4 && billboard1position > 0){
           setBillboard13position(billboard13position - 30);
@@ -365,7 +367,8 @@ function App() {
         <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate" className="gate" />
-            <img src={seeMyCareer} alt="seeMyCareer" className="forwardSign" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" />
+          <img src={seeMyCareer} alt="seeMyCareer" className="forwardSign" />
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -386,7 +389,9 @@ function App() {
           <img src={backToMainScreen} alt="backToMainScreen" className="backWordSign" />
           <img src={goToSkillPage} alt="goToSkillPage" className="forwardSign" />
           <img src={gate} alt="Gate" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -413,7 +418,9 @@ function App() {
           <img src={goBackToCareer} alt="goBackToCareer" className="backWordSign" />
           <img src={goToProjects} alt="goToProjects" className="forwardSign" />
           <img src={gate} alt="Gate" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -690,7 +697,9 @@ function App() {
           </div>
           
           <img src={gate} alt="Gate" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -705,7 +714,9 @@ function App() {
           <img src={platform} alt="Platform" className="platform" />
 
           <img src={gate} alt="Gate" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" />
           <img src={gate} alt="Gate2" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
           <img src={goBackToProjects} alt="goBackToProjects" className="backWordSign" />
           <img src={goToContactAndLinks} alt="goToContactAndLinks" className="forwardSign" />
           
@@ -842,6 +853,7 @@ function App() {
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate2" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
           <img src={goBackToLicenceAndCertifications} alt="goBackToLicenceAndCertifications" className="backWordSign" />
           <div className="links">
           <div className="link-item">
