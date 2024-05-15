@@ -88,6 +88,7 @@ function App() {
   const [certificate3position, setCertificate3position] = useState(160);
   const [certificate2position, setCertificate2position] = useState(200);
   const [certificate1position, setCertificate1position] = useState(240);
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -105,15 +106,6 @@ function App() {
     return () => clearTimeout(timer);
   }, [spriteImage]);
 
-  useEffect(() => {
-    if (pageNumber === 4) {
-      setSpritePositionX(50);
-    }
-    if (pageNumber === 5) {
-      setSpritePositionX(50);
-    }
-  }
-  , [pageNumber]);
 
   useEffect(() => {
     if (spritePositionX > 90) {
@@ -137,7 +129,7 @@ function App() {
       setSpriteImage(spriteRun);
       switch (event.key) {
         case 'ArrowRight':
-          if(pageNumber === 4 && billboard1position > 0){
+          if(pageNumber === 4){
             setBillboard13position(billboard13position - 3);
             setBillboard12position(billboard12position - 3);
             setBillboard11position(billboard11position - 3);
@@ -151,13 +143,15 @@ function App() {
             setBillboard3position(billboard3position - 3);
             setBillboard2position(billboard2position - 3);
             setBillboard1position(billboard1position - 3);
-          } else if(pageNumber === 5 && certificate1position > 0){
+            setSpritePositionX(prev => Math.min(100, prev + 0.45));
+          } else if(pageNumber === 5){
             setCertificate6position(certificate6position - 3);
             setCertificate5position(certificate5position - 3);
             setCertificate4position(certificate4position - 3);
             setCertificate3position(certificate3position - 3);
             setCertificate2position(certificate2position - 3);
             setCertificate1position(certificate1position - 3);
+            setSpritePositionX(prev => Math.min(100, prev + 1));
           }
           else{
             setSpritePositionX(prev => Math.min(100, prev + 3));
@@ -165,7 +159,7 @@ function App() {
           setMirror(false);
           break;
         case 'ArrowLeft':
-          if(pageNumber === 4 && billboard13position < 100){
+          if(pageNumber === 4){
             setBillboard13position(billboard13position + 3);
             setBillboard12position(billboard12position + 3);
             setBillboard11position(billboard11position + 3);
@@ -179,13 +173,15 @@ function App() {
             setBillboard3position(billboard3position + 3);
             setBillboard2position(billboard2position + 3);
             setBillboard1position(billboard1position + 3);
-          } else if(pageNumber === 5 && certificate6position < 100){
+            setSpritePositionX(prev => Math.max(0, prev - 0.45));
+          } else if(pageNumber === 5){
             setCertificate6position(certificate6position + 3);
             setCertificate5position(certificate5position + 3);
             setCertificate4position(certificate4position + 3);
             setCertificate3position(certificate3position + 3);
             setCertificate2position(certificate2position + 3);
             setCertificate1position(certificate1position + 3);
+            setSpritePositionX(prev => Math.max(0, prev - 1));
           }
           else {
             setSpritePositionX(prev => Math.max(0, prev - 3));
@@ -205,7 +201,7 @@ function App() {
     const handleWheel = (event) => {
       setSpriteImage(spriteRun);
         if(event.deltaY > 0){
-          if(pageNumber === 4 && billboard1position > 0){
+          if(pageNumber === 4){
             setBillboard13position(billboard13position - 3);
             setBillboard12position(billboard12position - 3);
             setBillboard11position(billboard11position - 3);
@@ -219,13 +215,15 @@ function App() {
             setBillboard3position(billboard3position - 3);
             setBillboard2position(billboard2position - 3);
             setBillboard1position(billboard1position - 3);
-          } else if(pageNumber === 5 && certificate1position > 0){
+            setSpritePositionX(prev => Math.min(100, prev + 0.45));
+          } else if(pageNumber === 5){
             setCertificate6position(certificate6position - 3);
             setCertificate5position(certificate5position - 3);
             setCertificate4position(certificate4position - 3);
             setCertificate3position(certificate3position - 3);
             setCertificate2position(certificate2position - 3);
             setCertificate1position(certificate1position - 3);
+            setSpritePositionX(prev => Math.min(100, prev + 1));
           }
           else{
             setSpritePositionX(prev => Math.min(100, prev + 3));
@@ -234,7 +232,7 @@ function App() {
         }
           
         if(event.deltaY < 0){
-          if(pageNumber === 4 && billboard13position < 100){
+          if(pageNumber === 4){
             setBillboard13position(billboard13position + 3);
             setBillboard12position(billboard12position + 3);
             setBillboard11position(billboard11position + 3);
@@ -248,13 +246,15 @@ function App() {
             setBillboard3position(billboard3position + 3);
             setBillboard2position(billboard2position + 3);
             setBillboard1position(billboard1position + 3);
-          } else if(pageNumber === 5 && certificate6position < 100){
+            setSpritePositionX(prev => Math.max(0, prev - 0.45));
+          } else if(pageNumber === 5){
             setCertificate6position(certificate6position + 3);
             setCertificate5position(certificate5position + 3);
             setCertificate4position(certificate4position + 3);
             setCertificate3position(certificate3position + 3);
             setCertificate2position(certificate2position + 3);
             setCertificate1position(certificate1position + 3);
+            setSpritePositionX(prev => Math.max(0, prev - 1));
           }
           else {
             setSpritePositionX(prev => Math.max(0, prev - 3));
@@ -278,13 +278,12 @@ function App() {
       const deltaX = startX - endX;
   
       if (Math.abs(deltaX) < 30) {
-        // Ignore small movements
         return;
       }
   
       if (deltaX < 0) {
         setSpriteImage(spriteRun);
-        if(pageNumber === 4 && billboard1position > 0){
+        if(pageNumber === 4){
           setBillboard13position(billboard13position - 30);
           setBillboard12position(billboard12position - 30);
           setBillboard11position(billboard11position - 30);
@@ -298,13 +297,15 @@ function App() {
           setBillboard3position(billboard3position - 30);
           setBillboard2position(billboard2position - 30);
           setBillboard1position(billboard1position - 30);
-        } else if(pageNumber === 5 && certificate1position > 0){
+          setSpritePositionX(prev => Math.min(100, prev + 4.5));
+        } else if(pageNumber === 5){
           setCertificate6position(certificate6position - 30);
           setCertificate5position(certificate5position - 30);
           setCertificate4position(certificate4position - 30);
           setCertificate3position(certificate3position - 30);
           setCertificate2position(certificate2position - 30);
           setCertificate1position(certificate1position - 30);
+          setSpritePositionX(prev => Math.min(100, prev + 10));
         }
         else{
           setSpritePositionX(prev => Math.min(100, prev + 30));
@@ -312,7 +313,7 @@ function App() {
         setMirror(false);
       } else {
         setSpriteImage(spriteRun);
-        if(pageNumber === 4 && billboard13position < 100){
+        if(pageNumber === 4){
           setBillboard13position(billboard13position + 30);
           setBillboard12position(billboard12position + 30);
           setBillboard11position(billboard11position + 30);
@@ -326,13 +327,15 @@ function App() {
           setBillboard3position(billboard3position + 30);
           setBillboard2position(billboard2position + 30);
           setBillboard1position(billboard1position + 30);
-        } else if(pageNumber === 5 && certificate6position < 100){
+          setSpritePositionX(prev => Math.max(0, prev - 4.5));
+        } else if(pageNumber === 5){
           setCertificate6position(certificate6position + 30);
           setCertificate5position(certificate5position + 30);
           setCertificate4position(certificate4position + 30);
           setCertificate3position(certificate3position + 30);
           setCertificate2position(certificate2position + 30);
           setCertificate1position(certificate1position + 30);
+          setSpritePositionX(prev => Math.max(0, prev - 10));
         }
         else {
           setSpritePositionX(prev => Math.max(0, prev - 30));

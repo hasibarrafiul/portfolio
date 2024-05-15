@@ -434,7 +434,7 @@ html, body {
 
 .billboard{
     position: absolute;
-    bottom: 100%;
+    bottom: 95%;
     left: 50%;
     width: 30%;
     height: auto;
