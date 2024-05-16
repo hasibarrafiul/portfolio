@@ -409,6 +409,73 @@ function App() {
     };
   }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position, isGamePaused]);
   
+  const handleSwipeRightClick = () => {
+    setSpriteImage(spriteRun);
+        if(pageNumber === 4 && !isGamePaused){
+          setBillboard13position(billboard13position - 30);
+          setBillboard12position(billboard12position - 30);
+          setBillboard11position(billboard11position - 30);
+          setBillboard10position(billboard10position - 30);
+          setBillboard9position(billboard9position - 30);
+          setBillboard8position(billboard8position - 30);
+          setBillboard7position(billboard7position - 30);
+          setBillboard6position(billboard6position - 30);
+          setBillboard5position(billboard5position - 30);
+          setBillboard4position(billboard4position - 30);
+          setBillboard3position(billboard3position - 30);
+          setBillboard2position(billboard2position - 30);
+          setBillboard1position(billboard1position - 30);
+          setSpritePositionX(prev => Math.min(100, prev + 4.5));
+        } else if(pageNumber === 5 && !isGamePaused){
+          setCertificate6position(certificate6position - 30);
+          setCertificate5position(certificate5position - 30);
+          setCertificate4position(certificate4position - 30);
+          setCertificate3position(certificate3position - 30);
+          setCertificate2position(certificate2position - 30);
+          setCertificate1position(certificate1position - 30);
+          setSpritePositionX(prev => Math.min(100, prev + 10));
+        }
+        else{
+          if(!isGamePaused){
+          setSpritePositionX(prev => Math.min(100, prev + 30));
+          }
+        }
+        setMirror(false);
+  };
+
+  const handleSwipeLeftClick = () => {
+    setSpriteImage(spriteRun);
+        if(pageNumber === 4 && !isGamePaused){
+          setBillboard13position(billboard13position + 30);
+          setBillboard12position(billboard12position + 30);
+          setBillboard11position(billboard11position + 30);
+          setBillboard10position(billboard10position + 30);
+          setBillboard9position(billboard9position + 30);
+          setBillboard8position(billboard8position + 30);
+          setBillboard7position(billboard7position + 30);
+          setBillboard6position(billboard6position + 30);
+          setBillboard5position(billboard5position + 30);
+          setBillboard4position(billboard4position + 30);
+          setBillboard3position(billboard3position + 30);
+          setBillboard2position(billboard2position + 30);
+          setBillboard1position(billboard1position + 30);
+          setSpritePositionX(prev => Math.max(0, prev - 4.5));
+        } else if(pageNumber === 5 && !isGamePaused){
+          setCertificate6position(certificate6position + 30);
+          setCertificate5position(certificate5position + 30);
+          setCertificate4position(certificate4position + 30);
+          setCertificate3position(certificate3position + 30);
+          setCertificate2position(certificate2position + 30);
+          setCertificate1position(certificate1position + 30);
+          setSpritePositionX(prev => Math.max(0, prev - 10));
+        }
+        else {
+          if(!isGamePaused){
+          setSpritePositionX(prev => Math.max(0, prev - 30));
+          }
+        }
+        setMirror(true);
+  };
 
   return (
     <div className="custom-background">
@@ -431,7 +498,7 @@ function App() {
         <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate" className="gate" />
-          <img src={SwipeRight} alt="SwipeRight" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" onClick={handleSwipeRightClick}/>
           <img src={seeMyCareer} alt="seeMyCareer" className="forwardSign" />
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
@@ -458,9 +525,9 @@ function App() {
           <img src={backToMainScreen} alt="backToMainScreen" className="backWordSign" />
           <img src={goToSkillPage} alt="goToSkillPage" className="forwardSign" />
           <img src={gate} alt="Gate" className="gate" />
-          <img src={SwipeRight} alt="SwipeRight" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" onClick={handleSwipeRightClick}/>
           <img src={gate} alt="Gate2" className="gate2" />
-          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" onClick={handleSwipeLeftClick}/>
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -492,9 +559,9 @@ function App() {
           <img src={goBackToCareer} alt="goBackToCareer" className="backWordSign" />
           <img src={goToProjects} alt="goToProjects" className="forwardSign" />
           <img src={gate} alt="Gate" className="gate" />
-          <img src={SwipeRight} alt="SwipeRight" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" onClick={handleSwipeRightClick}/>
           <img src={gate} alt="Gate2" className="gate2" />
-          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" onClick={handleSwipeLeftClick}/>
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -776,9 +843,9 @@ function App() {
           </div>
           
           <img src={gate} alt="Gate" className="gate" />
-          <img src={SwipeRight} alt="SwipeRight" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" onClick={handleSwipeRightClick}/>
           <img src={gate} alt="Gate2" className="gate2" />
-          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" onClick={handleSwipeLeftClick}/>
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
             transform: `translateX(-50%) scaleX(${mirror ? '-1' : '1'})`
@@ -796,13 +863,6 @@ function App() {
             </div>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
-
-          <img src={gate} alt="Gate" className="gate" />
-          <img src={SwipeRight} alt="SwipeRight" className="gate" />
-          <img src={gate} alt="Gate2" className="gate2" />
-          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
-          <img src={goBackToProjects} alt="goBackToProjects" className="backWordSign" />
-          <img src={goToContactAndLinks} alt="goToContactAndLinks" className="forwardSign" />
           
           <div className="billboard" style={{
               left: `${certificate6position}%`,
@@ -923,6 +983,12 @@ function App() {
               }}>
             </a>
           </div>
+          <img src={gate} alt="Gate" className="gate" />
+          <img src={SwipeRight} alt="SwipeRight" className="gate" onClick={handleSwipeRightClick}/>
+          <img src={gate} alt="Gate2" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" onClick={handleSwipeLeftClick}/>
+          <img src={goBackToProjects} alt="goBackToProjects" className="backWordSign" />
+          <img src={goToContactAndLinks} alt="goToContactAndLinks" className="forwardSign" />
           
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
@@ -942,7 +1008,7 @@ function App() {
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate2" className="gate2" />
-          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" />
+          <img src={SwipeLeft} alt="SwipeLeft" className="gate2" onClick={handleSwipeLeftClick}/>
           <img src={goBackToLicenceAndCertifications} alt="goBackToLicenceAndCertifications" className="backWordSign" />
           <div className="links">
           <div className="link-item">
