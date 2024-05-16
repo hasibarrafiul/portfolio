@@ -412,28 +412,22 @@ function App() {
 
   return (
     <div className="custom-background">
-      <div>
-      {isPortrait && (
-          <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
-      )}
-    </div>
-      <div className={`welcomeScreen ${animate ? 'animateUp' : ''}`}>
-        <h1 className="welcomeText">Welcome to my portfolio</h1>
-        <img src={loadingGif} alt="Loading" className="loadingBar" />
-      </div>
+
       {pageNumber === 1 && (
-      <div className={`mainMenu ${animate ? 'animateBottom' :''}`}>
+      <div className={`mainMenu ${prevPage > pageNumber ? 'slideLeft' : 'slideRight'} custom-background`}>
         <div>
       {isPortrait && (
         <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
       )}
     </div>
-        <div className='myInformationScreen'>
+    <div className="centerContainer">
+      <div className='myInformationScreen'>
             <h1 className="myName">My name is Hasib Ar Rafiul Fahim</h1>
             <h3 className="myTitle">I am a Software Engineer and Game Programmer</h3>
             <p className="myDescription">I am passionate about software engineering and game programming. I love creating games and solving problems.</p>
             <p className="myDescription">I currently live in Tokyo, Japan.</p>
-        </div>
+      </div>
+    </div>
         <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate" className="gate" />
