@@ -6,6 +6,8 @@ import Email from '@mui/icons-material/Email';
 import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import SvgIcon from '@mui/material/SvgIcon';
+import Dialog from '@mui/material/Dialog';
+import Slide from '@mui/material/Slide';
 
 import loadingGif from './images/assets/loading.gif';
 import SwipeLeft  from './images/assets/swipeLeft.gif';
@@ -29,6 +31,7 @@ import goToLicenceAndCertifications from './images/ui/goToLicenceAndCertificatio
 import goBackToProjects from './images/ui/goBackToProjects.png';
 import goToContactAndLinks from './images/ui/goToContactAndLinks.png';
 import goBackToLicenceAndCertifications from './images/ui/goBackToLicenseAndCertifications.png';
+import rotateNotice from './images/assets/rotateNotice.gif';
 
 import billboard13 from './images/ui/board13.png';
 import billboard12 from './images/ui/board12.png';
@@ -60,6 +63,25 @@ function StackOverflowIcon(props) {
   );
 }
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const FullScreenDialog = ({ open, handleClose }) => (
+  <React.Fragment>
+    <Dialog
+      fullScreen
+      open={open}
+      onClose={handleClose}
+      TransitionComponent={Transition}
+    >
+      <div className="rotateNotice">
+        <img src={rotateNotice} alt="Rotate your device" />
+      </div>
+    </Dialog>
+  </React.Fragment>
+);
+
 function App() {
   const [animate, setAnimate] = useState(false);
   const [spritePositionX, setSpritePositionX] = useState(50);
@@ -67,6 +89,9 @@ function App() {
   const [spriteImage, setSpriteImage] = useState(sprite);
   const [pageNumber, setPageNumber] = useState(1);
   const [prevPage, setPrevPage] = useState(0);
+  const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
+  const [isGamePaused, setIsGamePaused] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const [billboard13position, setBillboard13position] = useState(40);
   const [billboard12position, setBillboard12position] = useState(80);
@@ -88,6 +113,26 @@ function App() {
   const [certificate3position, setCertificate3position] = useState(160);
   const [certificate2position, setCertificate2position] = useState(200);
   const [certificate1position, setCertificate1position] = useState(240);
+
+  useEffect(() => {
+    const handleOrientationChange = () => {
+      const portrait = window.innerHeight > window.innerWidth;
+      setIsPortrait(portrait);
+      setIsGamePaused(portrait);
+      if (portrait) {
+        setDialogOpen(true);
+      } else {
+        setDialogOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleOrientationChange);
+    return () => window.removeEventListener("resize", handleOrientationChange);
+  }, []);
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
   
 
   useEffect(() => {
@@ -129,7 +174,7 @@ function App() {
       setSpriteImage(spriteRun);
       switch (event.key) {
         case 'ArrowRight':
-          if(pageNumber === 4){
+          if(pageNumber === 4 && !isGamePaused){
             setBillboard13position(billboard13position - 3);
             setBillboard12position(billboard12position - 3);
             setBillboard11position(billboard11position - 3);
@@ -144,7 +189,7 @@ function App() {
             setBillboard2position(billboard2position - 3);
             setBillboard1position(billboard1position - 3);
             setSpritePositionX(prev => Math.min(100, prev + 0.45));
-          } else if(pageNumber === 5){
+          } else if(pageNumber === 5 && !isGamePaused){
             setCertificate6position(certificate6position - 3);
             setCertificate5position(certificate5position - 3);
             setCertificate4position(certificate4position - 3);
@@ -154,12 +199,14 @@ function App() {
             setSpritePositionX(prev => Math.min(100, prev + 1));
           }
           else{
+            if(!isGamePaused){
             setSpritePositionX(prev => Math.min(100, prev + 3));
+            }
           }
           setMirror(false);
           break;
         case 'ArrowLeft':
-          if(pageNumber === 4){
+          if(pageNumber === 4 && !isGamePaused){
             setBillboard13position(billboard13position + 3);
             setBillboard12position(billboard12position + 3);
             setBillboard11position(billboard11position + 3);
@@ -174,7 +221,7 @@ function App() {
             setBillboard2position(billboard2position + 3);
             setBillboard1position(billboard1position + 3);
             setSpritePositionX(prev => Math.max(0, prev - 0.45));
-          } else if(pageNumber === 5){
+          } else if(pageNumber === 5 && !isGamePaused){
             setCertificate6position(certificate6position + 3);
             setCertificate5position(certificate5position + 3);
             setCertificate4position(certificate4position + 3);
@@ -184,7 +231,9 @@ function App() {
             setSpritePositionX(prev => Math.max(0, prev - 1));
           }
           else {
+            if(!isGamePaused){
             setSpritePositionX(prev => Math.max(0, prev - 3));
+            }
           }
           setMirror(true);
           break;
@@ -195,13 +244,13 @@ function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
+  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position, isGamePaused]);
 
   useEffect(() => {
     const handleWheel = (event) => {
       setSpriteImage(spriteRun);
         if(event.deltaY > 0){
-          if(pageNumber === 4){
+          if(pageNumber === 4 && !isGamePaused){
             setBillboard13position(billboard13position - 3);
             setBillboard12position(billboard12position - 3);
             setBillboard11position(billboard11position - 3);
@@ -216,7 +265,7 @@ function App() {
             setBillboard2position(billboard2position - 3);
             setBillboard1position(billboard1position - 3);
             setSpritePositionX(prev => Math.min(100, prev + 0.45));
-          } else if(pageNumber === 5){
+          } else if(pageNumber === 5 && !isGamePaused){
             setCertificate6position(certificate6position - 3);
             setCertificate5position(certificate5position - 3);
             setCertificate4position(certificate4position - 3);
@@ -226,13 +275,15 @@ function App() {
             setSpritePositionX(prev => Math.min(100, prev + 1));
           }
           else{
+            if(!isGamePaused){
             setSpritePositionX(prev => Math.min(100, prev + 3));
+            }
           }
           setMirror(false);
         }
           
         if(event.deltaY < 0){
-          if(pageNumber === 4){
+          if(pageNumber === 4 && !isGamePaused){
             setBillboard13position(billboard13position + 3);
             setBillboard12position(billboard12position + 3);
             setBillboard11position(billboard11position + 3);
@@ -247,7 +298,7 @@ function App() {
             setBillboard2position(billboard2position + 3);
             setBillboard1position(billboard1position + 3);
             setSpritePositionX(prev => Math.max(0, prev - 0.45));
-          } else if(pageNumber === 5){
+          } else if(pageNumber === 5 && !isGamePaused){
             setCertificate6position(certificate6position + 3);
             setCertificate5position(certificate5position + 3);
             setCertificate4position(certificate4position + 3);
@@ -257,7 +308,9 @@ function App() {
             setSpritePositionX(prev => Math.max(0, prev - 1));
           }
           else {
+            if(!isGamePaused){
             setSpritePositionX(prev => Math.max(0, prev - 3));
+            }
           }
           setMirror(true);
         }
@@ -265,7 +318,7 @@ function App() {
 
     window.addEventListener('wheel', handleWheel);
     return () => window.removeEventListener('wheel', handleWheel);
-  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
+  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position, isGamePaused]);
 
   useEffect(() => {
     let startX = null;
@@ -283,7 +336,7 @@ function App() {
   
       if (deltaX < 0) {
         setSpriteImage(spriteRun);
-        if(pageNumber === 4){
+        if(pageNumber === 4 && !isGamePaused){
           setBillboard13position(billboard13position - 30);
           setBillboard12position(billboard12position - 30);
           setBillboard11position(billboard11position - 30);
@@ -298,7 +351,7 @@ function App() {
           setBillboard2position(billboard2position - 30);
           setBillboard1position(billboard1position - 30);
           setSpritePositionX(prev => Math.min(100, prev + 4.5));
-        } else if(pageNumber === 5){
+        } else if(pageNumber === 5 && !isGamePaused){
           setCertificate6position(certificate6position - 30);
           setCertificate5position(certificate5position - 30);
           setCertificate4position(certificate4position - 30);
@@ -308,12 +361,14 @@ function App() {
           setSpritePositionX(prev => Math.min(100, prev + 10));
         }
         else{
+          if(!isGamePaused){
           setSpritePositionX(prev => Math.min(100, prev + 30));
+          }
         }
         setMirror(false);
       } else {
         setSpriteImage(spriteRun);
-        if(pageNumber === 4){
+        if(pageNumber === 4 && !isGamePaused){
           setBillboard13position(billboard13position + 30);
           setBillboard12position(billboard12position + 30);
           setBillboard11position(billboard11position + 30);
@@ -328,7 +383,7 @@ function App() {
           setBillboard2position(billboard2position + 30);
           setBillboard1position(billboard1position + 30);
           setSpritePositionX(prev => Math.max(0, prev - 4.5));
-        } else if(pageNumber === 5){
+        } else if(pageNumber === 5 && !isGamePaused){
           setCertificate6position(certificate6position + 30);
           setCertificate5position(certificate5position + 30);
           setCertificate4position(certificate4position + 30);
@@ -338,7 +393,9 @@ function App() {
           setSpritePositionX(prev => Math.max(0, prev - 10));
         }
         else {
+          if(!isGamePaused){
           setSpritePositionX(prev => Math.max(0, prev - 30));
+          }
         }
         setMirror(true);
       }
@@ -350,17 +407,27 @@ function App() {
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position]);
+  }, [pageNumber, billboard1position, billboard13position,spritePositionX, certificate1position, certificate6position, isGamePaused]);
   
 
   return (
     <div className="custom-background">
+      <div>
+      {isPortrait && (
+          <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
+      )}
+    </div>
       <div className={`welcomeScreen ${animate ? 'animateUp' : ''}`}>
         <h1 className="welcomeText">Welcome to my portfolio</h1>
         <img src={loadingGif} alt="Loading" className="loadingBar" />
       </div>
       {pageNumber === 1 && (
       <div className={`mainMenu ${animate ? 'animateBottom' :''}`}>
+        <div>
+      {isPortrait && (
+        <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
+      )}
+    </div>
         <div className='myInformationScreen'>
             <h1 className="myName">My name is Hasib Ar Rafiul Fahim</h1>
             <h3 className="myTitle">I am a Software Engineer and Game Programmer</h3>
@@ -381,6 +448,11 @@ function App() {
       )}
       {pageNumber === 2 && (
           <div className={`careerDiv ${prevPage > pageNumber ? 'slideLeft' : 'slideRight'} custom-background2`}>
+            <div>
+            {isPortrait && (
+            <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
+            )}
+            </div>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={studyImage} alt="study" className="study" />
@@ -405,6 +477,11 @@ function App() {
 
         {pageNumber === 3 && (
           <div className={`skillsbar ${prevPage > pageNumber ? 'slideLeft' : 'slideRight'} custom-background2`}>
+            <div>
+            {isPortrait && (
+            <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
+            )}
+            </div>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <h1 className="skillsTitle">Skills</h1>
@@ -434,6 +511,11 @@ function App() {
 
         {pageNumber === 4 && (
           <div className={`gameProjects ${prevPage > pageNumber ? 'slideLeft' : 'slideRight'} custom-background2`}>
+            <div>
+            {isPortrait && (
+            <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
+            )}
+            </div>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={goBackToSkills} alt="goBackToSkills" className="backWordSign" />
@@ -713,6 +795,11 @@ function App() {
 
         {pageNumber === 5 && (
           <div className={`certificates ${prevPage > pageNumber ? 'slideLeft' : 'slideRight'} custom-background2`}>
+            <div>
+            {isPortrait && (
+            <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
+            )}
+            </div>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
 
@@ -853,6 +940,11 @@ function App() {
 
         {pageNumber === 6 && (
           <div className={`certificates ${prevPage > pageNumber ? 'slideLeft' : 'slideRight'} custom-background2`}>
+            <div>
+            {isPortrait && (
+            <FullScreenDialog open={setDialogOpen} handleClose={handleDialogClose} />
+            )}
+            </div>
           <div className="platformContainer">
           <img src={platform} alt="Platform" className="platform" />
           <img src={gate} alt="Gate2" className="gate2" />

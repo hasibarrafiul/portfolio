@@ -440,28 +440,41 @@ html, body {
     height: auto;
 }
 
-@media (max-width: 1024px) { /* For tablets */
+.rotateNotice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .rotateNoticeImage {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+@media (max-width: 1024px) {
     .certifications1 {
-        bottom: 5vh; /* Less vertical offset */
-        width: 40%; /* Slightly larger to maintain readability */
+        bottom: 5vh;
+        width: 40%;
     }
 }
 
-@media (max-width: 768px) { /* For smaller tablets and large phones */
+@media (max-width: 768px) {
     .certifications1 {
-        position: relative; /* Change positioning on smaller devices */
-        bottom: auto; /* Remove bottom positioning */
-        top: 10vh; /* Add some top margin to avoid overlapping with other elements */
-        left: 50%; /* Center align */
-        transform: translateX(-50%); /* Perfect centering */
-        width: 80%; /* Increase width to use more screen space */
+        position: relative;
+        bottom: auto;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
     }
 }
 
-@media (max-width: 480px) { /* For mobile phones */
+@media (max-width: 480px) {
     .certifications1 {
         top: 5vh;
-        width: 95%; /* Make it nearly full width */
+        width: 95%;
     }
 }
 
