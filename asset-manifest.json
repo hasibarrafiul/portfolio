@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-game/static/css/main.f528d203.css",
-    "main.js": "/portfolio-game/static/js/main.5208d1cf.js",
+    "main.css": "/portfolio-game/static/css/main.9617697c.css",
+    "main.js": "/portfolio-game/static/js/main.43da1076.js",
     "static/media/board10.png": "/portfolio-game/static/media/board10.4ec8554665fc67a1e4f5.png",
     "static/media/board8.png": "/portfolio-game/static/media/board8.fe8df90a1d12b6ba2b3d.png",
     "static/media/board6.png": "/portfolio-game/static/media/board6.b983eea848cf6075f8eb.png",
@@ -47,11 +47,11 @@
     "static/media/swipeRight.gif": "/portfolio-game/static/media/swipeRight.3347bdaad865138c5938.gif",
     "static/media/loading.gif": "/portfolio-game/static/media/loading.10270ae1f76c96f14443.gif",
     "index.html": "/portfolio-game/index.html",
-    "main.f528d203.css.map": "/portfolio-game/static/css/main.f528d203.css.map",
-    "main.5208d1cf.js.map": "/portfolio-game/static/js/main.5208d1cf.js.map"
+    "main.9617697c.css.map": "/portfolio-game/static/css/main.9617697c.css.map",
+    "main.43da1076.js.map": "/portfolio-game/static/js/main.43da1076.js.map"
   },
   "entrypoints": [
-    "static/css/main.f528d203.css",
-    "static/js/main.5208d1cf.js"
+    "static/css/main.9617697c.css",
+    "static/js/main.43da1076.js"
   ]
 }
