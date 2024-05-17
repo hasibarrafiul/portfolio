@@ -1014,7 +1014,7 @@ function App() {
               <a href="https://github.com/hasibarrafiul" target="_blank" rel="noopener noreferrer">
                   <Fab variant="extended">
                       <GitHub sx={{ mr: 1 }} />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GitHub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GitHub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   </Fab>
               </a>
           </div>
@@ -1022,7 +1022,7 @@ function App() {
               <a href="https://www.linkedin.com/in/hasibarrafiul/" target="_blank" rel="noopener noreferrer">
                   <Fab variant="extended">
                       <LinkedIn sx={{ mr: 1 }} />
-                      LinkedIn
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LinkedIn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   </Fab>
               </a>
           </div>
@@ -1039,14 +1039,13 @@ function App() {
               <a href="mailto:hasibarrafiulfahim@gmail.com">
                   <Fab variant="extended">
                       <Email sx={{ mr: 1 }} />
-                      Email
+                      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   </Fab>
               </a>
           </div>
           <div className="center-container">
-            <h1 className='myName'>Thank you for your time!</h1>
-            <br />
-            <a href="https://www.vecteezy.com/free-vector/gui" className="center-link">Gui Vectors by Vecteezy</a>
+            <h1 className='myName'>Thank you for your time! <a href="https://www.vecteezy.com/free-vector/gui" className="center-link">©Vecteezy</a></h1>
+            
             </div>
           </div>
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
