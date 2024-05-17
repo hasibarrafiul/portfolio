@@ -179,12 +179,6 @@ html, body {
     z-index: 1;
 }
 
-@media (max-width: 1024px) {
-    .myInformationScreen {
-        /* Adjust styles as needed */
-    }
-}
-
 @media (max-width: 768px) {
     .myInformationScreen {
         width: 95%; /* Slightly wider on smaller screens */
@@ -524,7 +518,7 @@ html, body {
     left: 10vh;
     right: 0;
     margin: 0 auto;
-    width: 40%; /* Adjust the width as needed */
+    width: 35%; /* Adjust the width as needed */
 }
 
 .link-item {
@@ -558,3 +552,14 @@ html, body {
         bottom: 50vh;
     }
 }
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .center-link {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }

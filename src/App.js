@@ -9,7 +9,6 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 
-import loadingGif from './images/assets/loading.gif';
 import SwipeLeft  from './images/assets/swipeLeft.gif';
 import SwipeRight  from './images/assets/swipeRight.gif';
 import platform from './images/assets/platform.jpg';
@@ -1044,7 +1043,11 @@ function App() {
                   </Fab>
               </a>
           </div>
-          <h1 className='myName'>Thank you for your time! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+          <div className="center-container">
+            <h1 className='myName'>Thank you for your time!</h1>
+            <br />
+            <a href="https://www.vecteezy.com/free-vector/gui" className="center-link">Gui Vectors by Vecteezy</a>
+            </div>
           </div>
           <img src={spriteImage} alt="Sprite" className="sprite" style={{
             left: `${spritePositionX}%`,
