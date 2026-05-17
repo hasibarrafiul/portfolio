@@ -9,10 +9,6 @@ const CERTIFICATE_SCROLL_AMOUNT = 3;
 const CERTIFICATE_TOUCH_SCROLL_AMOUNT = 30;
 const SPRITE_NORMAL_MOVE = 3;
 const SPRITE_TOUCH_MOVE = 30;
-const SPRITE_BILLBOARD_MOVE = 0.45;
-const SPRITE_BILLBOARD_TOUCH_MOVE = 4.5;
-const SPRITE_CERTIFICATE_MOVE = 1;
-const SPRITE_CERTIFICATE_TOUCH_MOVE = 10;
 
 /**
  * Creates an object with all position state updated after scrolling billboards

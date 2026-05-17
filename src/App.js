@@ -12,7 +12,7 @@ import ContactPage from './pages/ContactPage';
 function App() {
   const {
     spritePositionX, mirror, spriteImage, pageNumber, prevPage,
-    billboardPositions, certificatePositions,
+    billboardPositions,
     setIsGamePaused, handleMove
   } = useGameNavigation();
 
