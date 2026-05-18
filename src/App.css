@@ -176,9 +176,16 @@ html, body {
 .myInformationScreen {
     width: 90%; /* Responsive width, you can adjust as necessary */
     max-width: 600px; /* Maximum width of the container */
-    padding: 20px; /* Optional: Adds padding inside the container */
+    padding: 28px 32px; /* Optional: Adds padding inside the container */
     box-sizing: border-box; /* Ensures padding doesn't affect width calculations */
     z-index: 1;
+    background: rgba(10, 15, 40, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-top: 3px solid rgba(255, 215, 0, 0.7);
+    border-radius: 18px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255,255,255,0.07);
 }
 
 @media (max-width: 768px) {
@@ -492,13 +499,14 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(10, 15, 40, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-top: 3px solid rgba(255, 215, 0, 0.7);
     border-radius: 16px;
     padding: 16px 32px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.08);
     min-width: 350px;
     text-align: center;
 }
@@ -513,29 +521,29 @@ html, body {
 .companyName {
     font-family: "Jaro", sans-serif;
     font-size: 1.4em;
-    color: #fff;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 
 .companyLocation {
     font-family: "Jaro", sans-serif;
     font-size: 1em;
-    color: rgba(255, 255, 255, 0.85);
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: rgba(100, 210, 255, 0.95);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .companyRole {
     font-family: "Jaro", sans-serif;
     font-size: 1.1em;
-    color: #fff;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: #ffd700;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8);
 }
 
 .companyPeriod {
     font-family: "Jaro", sans-serif;
     font-size: 0.95em;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: rgba(200, 220, 255, 0.9);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 /* Fixed project cards container - no scrolling */
@@ -574,13 +582,14 @@ html, body {
 .projectBillboardFixed {
     flex: 1 1 0;
     min-width: 0;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 15, 40, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-top: 3px solid rgba(100, 200, 255, 0.7);
     border-radius: 14px;
     padding: 16px 18px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.08);
     pointer-events: auto;
     max-height: 52vh;
     overflow-y: auto;
@@ -601,8 +610,8 @@ html, body {
 .projectBillboardTitle {
     font-family: "Jaro", sans-serif;
     font-size: 1.3em;
-    color: #fff;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
     margin: 0 0 8px 0;
     line-height: 1.2;
 }
@@ -610,11 +619,11 @@ html, body {
 .projectBillboardTech {
     font-family: "Jaro", sans-serif;
     font-size: 1em;
-    color: rgba(255, 255, 255, 0.85);
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: rgba(100, 210, 255, 0.95);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     margin: 0 0 10px 0;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(100, 200, 255, 0.25);
 }
 
 .projectBillboardHighlights {
@@ -626,8 +635,8 @@ html, body {
 .projectBillboardHighlights li {
     font-family: "Jaro", sans-serif;
     font-size: 0.9em;
-    color: #fff;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: rgba(230, 240, 255, 0.95);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     margin-bottom: 6px;
     line-height: 1.3;
 }
@@ -635,22 +644,22 @@ html, body {
 .projectGithubLink {
     display: inline-block;
     margin-top: 12px;
-    color: rgba(100, 200, 255, 1);
+    color: #64c8ff;
     text-decoration: none;
     font-family: "Jaro", sans-serif;
     font-size: 0.9em;
     font-weight: bold;
     padding: 6px 12px;
-    border: 1px solid rgba(100, 200, 255, 0.5);
+    border: 1px solid rgba(100, 200, 255, 0.6);
     border-radius: 6px;
-    background: rgba(100, 200, 255, 0.15);
+    background: rgba(100, 200, 255, 0.18);
     transition: all 0.3s ease;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
 .projectGithubLink:hover {
-    background: rgba(100, 200, 255, 0.3);
-    border-color: rgba(100, 200, 255, 0.8);
+    background: rgba(100, 200, 255, 0.35);
+    border-color: rgba(100, 200, 255, 1);
     transform: translateX(4px);
 }
 
@@ -786,29 +795,30 @@ html, body {
 }
 
 .skillBox {
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(10, 15, 40, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-top: 3px solid rgba(100, 200, 255, 0.7);
     border-radius: 16px;
     padding: 18px 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.08);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .skillBox:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
 }
 
 .skillBoxTitle {
     font-family: "Jaro", sans-serif;
     font-size: 1.3em;
-    color: #fff;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
     margin: 0 0 12px 0;
     padding-bottom: 8px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid rgba(100, 200, 255, 0.3);
 }
 
 .skillBoxItems {
@@ -819,19 +829,20 @@ html, body {
 
 .skillTag {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: rgba(100, 200, 255, 0.18);
+    color: #e8f4ff;
     font-family: "Jaro", sans-serif;
     font-size: 0.85em;
     padding: 5px 12px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    border: 1px solid rgba(100, 200, 255, 0.4);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     transition: background 0.2s;
 }
 
 .skillTag:hover {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(100, 200, 255, 0.35);
+    border-color: rgba(100, 200, 255, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -925,11 +936,11 @@ html, body {
 .sectionTitle {
     font-family: "Jaro", sans-serif;
     font-size: 1.8em;
-    color: #fff;
-    text-shadow: -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
     margin: 0;
     padding: 8px 0;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid rgba(100, 200, 255, 0.4);
 }
 
 /* EDUCATION CARDS */
@@ -940,21 +951,21 @@ html, body {
 }
 
 .educationCard {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 15, 40, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 18px 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.06);
     transition: all 0.3s ease;
-    border-left: 5px solid rgba(255, 215, 0, 0.6);
+    border-left: 5px solid rgba(255, 215, 0, 0.8);
 }
 
 .educationCard:hover {
     transform: translateX(6px);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(15, 22, 55, 0.9);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
 }
 
 .eduHeader {
@@ -967,34 +978,35 @@ html, body {
 .eduDegree {
     font-family: "Jaro", sans-serif;
     font-size: 1.2em;
-    color: #fff;
+    color: #ffffff;
     margin: 0;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
 }
 
 .eduYear {
-    background: rgba(255, 215, 0, 0.3);
-    color: #fff;
+    background: rgba(255, 215, 0, 0.25);
+    color: #ffd700;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: bold;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255, 215, 0, 0.4);
 }
 
 .eduInstitution {
-    color: #fff;
+    color: rgba(200, 220, 255, 0.95);
     font-size: 1em;
     margin: 4px 0;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .eduSpecialization {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(100, 210, 255, 0.9);
     font-size: 0.95em;
     margin: 4px 0 0 0;
     font-style: italic;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 /* CERTIFICATIONS CARDS */
@@ -1005,14 +1017,15 @@ html, body {
 }
 
 .certificationCard {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 15, 40, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-top: 3px solid rgba(255, 215, 0, 0.7);
     border-radius: 12px;
     padding: 14px;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.06);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -1025,20 +1038,20 @@ html, body {
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
     transition: all 0.3s ease;
 }
 
 .certificationCard:hover {
     transform: translateY(-8px);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.12) 100%);
-    box-shadow: 0 16px 48px rgba(255, 215, 0, 0.25);
+    background: rgba(15, 22, 55, 0.92);
+    box-shadow: 0 16px 48px rgba(255, 215, 0, 0.2);
     border-color: rgba(255, 215, 0, 0.5);
 }
 
 .certBadge {
     display: inline-block;
-    background: rgba(255, 215, 0, 0.25);
+    background: rgba(255, 215, 0, 0.2);
     border: 2px solid rgba(255, 215, 0, 0.5);
     border-radius: 50%;
     width: 50px;
@@ -1055,22 +1068,22 @@ html, body {
     font-size: 1.1em;
     color: #ffd700;
     font-weight: bold;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8);
 }
 
 .certTitle {
     font-family: "Jaro", sans-serif;
     font-size: 0.95em;
-    color: #fff;
+    color: #ffffff;
     margin: 8px 0 4px 0;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
 }
 
 .certDate {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(100, 210, 255, 0.85);
     font-size: 0.8em;
     margin: 0;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
 }
 
 /* LANGUAGES GRID */
@@ -1081,39 +1094,39 @@ html, body {
 }
 
 .languageCard {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 15, 40, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 16px;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.06);
     transition: all 0.3s ease;
-    border-top: 4px solid rgba(100, 200, 255, 0.6);
+    border-top: 4px solid rgba(100, 200, 255, 0.7);
 }
 
 .languageCard:hover {
     transform: scale(1.08);
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(15, 22, 55, 0.92);
     border-top-color: rgba(100, 200, 255, 1);
-    box-shadow: 0 12px 40px rgba(100, 200, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(100, 200, 255, 0.25);
 }
 
 .languageName {
     font-family: "Jaro", sans-serif;
     font-size: 1.3em;
-    color: #fff;
+    color: #ffffff;
     margin: 0 0 8px 0;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
 }
 
 .languageProficiency {
-    color: rgba(100, 200, 255, 0.9);
+    color: rgba(100, 210, 255, 0.95);
     font-size: 1em;
     margin: 0;
     font-weight: bold;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
 }
 
 /* PUBLICATIONS SECTION */
@@ -1124,52 +1137,52 @@ html, body {
 }
 
 .publicationCard {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 15, 40, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 16px;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.06);
     transition: all 0.3s ease;
-    border-top: 4px solid rgba(100, 200, 255, 0.6);
+    border-top: 4px solid rgba(100, 200, 255, 0.7);
 }
 
 .publicationCard:hover {
     transform: scale(1.08);
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(15, 22, 55, 0.92);
     border-top-color: rgba(100, 200, 255, 1);
-    box-shadow: 0 12px 40px rgba(100, 200, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(100, 200, 255, 0.25);
 }
 
 .pubTitle {
     font-family: "Jaro", sans-serif;
     font-size: 0.95em;
-    color: #fff;
+    color: #ffffff;
     margin: 0 0 8px 0;
-    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
     line-height: 1.3;
 }
 
 .pubViewBtn {
     display: inline-block;
-    color: rgba(100, 200, 255, 0.9);
+    color: #64c8ff;
     font-size: 0.85em;
     font-weight: bold;
     text-decoration: none;
-    text-shadow: -1px -1px 1px black;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     transition: all 0.3s ease;
     padding: 4px 10px;
-    border: 1px solid rgba(100, 200, 255, 0.4);
+    border: 1px solid rgba(100, 200, 255, 0.5);
     border-radius: 6px;
-    background: rgba(100, 200, 255, 0.1);
+    background: rgba(100, 200, 255, 0.15);
 }
 
 .pubViewBtn:hover {
-    color: rgba(100, 200, 255, 1);
-    background: rgba(100, 200, 255, 0.2);
-    border-color: rgba(100, 200, 255, 0.7);
+    color: #ffffff;
+    background: rgba(100, 200, 255, 0.3);
+    border-color: rgba(100, 200, 255, 0.8);
 }
 
 /* RESPONSIVE DESIGN FOR EDUCATION PAGE */
@@ -1290,55 +1303,7 @@ html, body {
 
 .contact-icon { font-size: 30px !important; }
 
-/* Specific Mobile Styles for Contact Page (to mimic PC view proportions) */
-@media (max-width: 768px) {
-    #contactPageContainer .certificationsGrid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px;
-    }
-    #contactPageContainer .certificationCard {
-        padding: 10px;
-    }
-    #contactPageContainer .certBadge {
-        width: 40px;
-        height: 40px;
-    }
-    #contactPageContainer .contact-icon {
-        font-size: 20px !important;
-    }
-    #contactPageContainer .certTitle {
-        font-size: 0.85em;
-    }
-    #contactPageContainer .sectionTitle {
-        font-size: 1.2em;
-    }
-}
-
-@media (max-width: 480px) {
-    #contactPageContainer .certificationsGrid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px;
-    }
-    #contactPageContainer .certificationCard {
-        padding: 8px;
-    }
-    #contactPageContainer .certBadge {
-        width: 30px;
-        height: 30px;
-    }
-    #contactPageContainer .contact-icon {
-        font-size: 16px !important;
-        margin: 0 auto 4px;
-    }
-    #contactPageContainer .certTitle {
-        font-size: 0.7em;
-        margin: 4px 0 2px 0;
-    }
-    #contactPageContainer .sectionTitle {
-        font-size: 1em;
-        margin-bottom: 2px;
-    }
-}
+/* Contact page mobile styles are consolidated at the bottom of this file */
 
 /* ===== GLOBAL MOBILE SCALING ===== */
 @media (max-width: 1024px) {
@@ -1358,12 +1323,6 @@ html, body {
     .skillBoxTitle { font-size: 1.1em !important; }
     .skillTag { font-size: 0.75em !important; padding: 3px 8px !important; }
     .educationContainer { top: 2% !important; gap: 12px !important; }
-    #contactPageContainer .certificationsGrid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
-    #contactPageContainer .certificationCard { padding: 8px !important; }
-    #contactPageContainer .certBadge { width: 35px !important; height: 35px !important; }
-    #contactPageContainer .contact-icon { font-size: 18px !important; }
-    #contactPageContainer .certTitle { font-size: 0.75em !important; }
-    #contactPageContainer .sectionTitle { font-size: 1.1em !important; }
 }
 
 @media (max-width: 480px) {
@@ -1373,12 +1332,6 @@ html, body {
     .companyInfoBox { top: 2% !important; width: 95% !important; padding: 6px 10px !important; }
     .skillsContainer { width: 95% !important; top: 30% !important; }
     .educationContainer { top: 1% !important; width: 98% !important; padding: 0 6px !important; gap: 8px !important; }
-    #contactPageContainer .certificationsGrid { grid-template-columns: repeat(2, 1fr) !important; gap: 6px !important; }
-    #contactPageContainer .certificationCard { padding: 6px !important; }
-    #contactPageContainer .certBadge { width: 26px !important; height: 26px !important; margin: 0 auto 3px !important; }
-    #contactPageContainer .contact-icon { font-size: 14px !important; }
-    #contactPageContainer .certTitle { font-size: 0.65em !important; margin: 3px 0 !important; }
-    #contactPageContainer .sectionTitle { font-size: 0.95em !important; }
 }
 
 /* ===== GLOBAL MOBILE SCALING - WIDER BREAKPOINTS + HEIGHT QUERIES ===== */
@@ -1400,11 +1353,6 @@ html, body {
     .skillsContainer { width: 90% !important; gap: 10px !important; }
     .skillBox { padding: 10px 12px !important; }
     .educationContainer { top: 2% !important; gap: 10px !important; }
-    #contactPageContainer .certificationsGrid { grid-template-columns: repeat(2, 1fr) !important; }
-    #contactPageContainer .certificationCard { padding: 8px !important; }
-    #contactPageContainer .certBadge { width: 30px !important; height: 30px !important; }
-    #contactPageContainer .contact-icon { font-size: 16px !important; }
-    #contactPageContainer .certTitle { font-size: 0.7em !important; }
 }
 
 /* Landscape mobile (short screens, wide) - key fix */
@@ -1422,12 +1370,6 @@ html, body {
     .projectBillboardHighlights li { font-size: 0.75em !important; margin-bottom: 3px !important; }
     .skillsContainer { top: 28% !important; }
     .educationContainer { top: 0% !important; max-height: 72vh !important; gap: 8px !important; }
-    #contactPageContainer .sectionTitle { font-size: 0.9em !important; }
-    #contactPageContainer .certificationsGrid { gap: 6px !important; }
-    #contactPageContainer .certificationCard { padding: 6px !important; }
-    #contactPageContainer .certBadge { width: 24px !important; height: 24px !important; }
-    #contactPageContainer .contact-icon { font-size: 13px !important; }
-    #contactPageContainer .certTitle { font-size: 0.6em !important; }
 }
 
 /* Very small phones */
@@ -1438,11 +1380,6 @@ html, body {
     .companyInfoBox { top: 2% !important; width: 95% !important; }
     .skillsContainer { width: 95% !important; top: 30% !important; }
     .educationContainer { top: 1% !important; width: 98% !important; padding: 0 6px !important; gap: 6px !important; }
-    #contactPageContainer .certificationsGrid { gap: 5px !important; }
-    #contactPageContainer .certificationCard { padding: 5px !important; }
-    #contactPageContainer .certBadge { width: 22px !important; height: 22px !important; }
-    #contactPageContainer .contact-icon { font-size: 12px !important; }
-    #contactPageContainer .certTitle { font-size: 0.6em !important; }
 }
 
 /* ===== FONT SIZE EXCEPTIONS: Homepage & Contact Page ===== */
@@ -1501,46 +1438,99 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .mainMenu .myName        { font-size: 32px !important; }
-    .mainMenu .myTitle       { font-size: 20px !important; }
-    .mainMenu .myDescription { font-size: 16px !important; }
+    .mainMenu .myName        { font-size: 22px !important; }
+    .mainMenu .myTitle       { font-size: 14px !important; }
+    .mainMenu .myDescription { font-size: 12px !important; }
+    .mainMenu .myInformationScreen { padding: 16px 18px !important; }
 }
 
 @media (max-height: 500px) and (max-width: 1024px) {
-    .mainMenu .myName        { font-size: 32px !important; }
-    .mainMenu .myTitle       { font-size: 20px !important; }
-    .mainMenu .myDescription { font-size: 16px !important; }
+    .mainMenu .myName        { font-size: 20px !important; }
+    .mainMenu .myTitle       { font-size: 13px !important; }
+    .mainMenu .myDescription { font-size: 11px !important; }
+    .mainMenu .myInformationScreen { padding: 12px 16px !important; }
 }
 
 @media (max-width: 480px) {
-    .mainMenu .myName        { font-size: 28px !important; }
-    .mainMenu .myTitle       { font-size: 18px !important; }
-    .mainMenu .myDescription { font-size: 14px !important; }
+    .mainMenu .myName        { font-size: 20px !important; }
+    .mainMenu .myTitle       { font-size: 13px !important; }
+    .mainMenu .myDescription { font-size: 11px !important; }
+    .mainMenu .myInformationScreen { padding: 14px 16px !important; }
 }
 
-/* Contact page: all text elements locked to their original sizes */
-@media (max-width: 1024px) {
-    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
-    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
-    #contactPageContainer .myName            { font-size: 32px !important; }
+/* ===== CONTACT PAGE - MOBILE LAYOUT ===== */
+/* Landscape mobile / small tablets (≤768px wide or ≤500px tall) */
+@media (max-width: 768px), (max-height: 500px) and (max-width: 1024px) {
+    #contactPageContainer {
+        top: 2% !important;
+        max-height: 68vh !important;
+        overflow-y: auto !important;
+        padding: 0 8px !important;
+        gap: 0 !important;
+    }
+    #contactPageContainer .sectionTitle {
+        font-size: 16px !important;
+        padding: 4px 0 !important;
+        margin-bottom: 6px !important;
+    }
+    #contactPageContainer .certificationsGrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        margin-top: 8px !important;
+    }
+    #contactPageContainer .certificationCard {
+        padding: 8px 6px !important;
+    }
+    #contactPageContainer .certBadge {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 4px !important;
+    }
+    #contactPageContainer .contact-icon {
+        font-size: 16px !important;
+    }
+    #contactPageContainer .certTitle {
+        font-size: 12px !important;
+        margin: 4px 0 0 0 !important;
+    }
+    #contactPageContainer .center-container {
+        margin-top: 10px !important;
+    }
+    #contactPageContainer .myName {
+        font-size: 16px !important;
+    }
 }
 
-@media (max-width: 768px) {
-    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
-    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
-    #contactPageContainer .myName            { font-size: 32px !important; }
-}
-
-@media (max-height: 500px) and (max-width: 1024px) {
-    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
-    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
-    #contactPageContainer .myName            { font-size: 32px !important; }
-}
-
+/* Portrait phones (≤480px) */
 @media (max-width: 480px) {
-    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
-    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
-    #contactPageContainer .myName            { font-size: 32px !important; }
+    #contactPageContainer {
+        top: 2% !important;
+        max-height: 66vh !important;
+        padding: 0 6px !important;
+    }
+    #contactPageContainer .sectionTitle {
+        font-size: 15px !important;
+    }
+    #contactPageContainer .certificationsGrid {
+        gap: 6px !important;
+        margin-top: 6px !important;
+    }
+    #contactPageContainer .certificationCard {
+        padding: 7px 5px !important;
+    }
+    #contactPageContainer .certBadge {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    #contactPageContainer .contact-icon {
+        font-size: 14px !important;
+    }
+    #contactPageContainer .certTitle {
+        font-size: 11px !important;
+    }
+    #contactPageContainer .myName {
+        font-size: 14px !important;
+    }
 }
 
 /* ===== PROJECT CARD - CLICKABLE & EXPAND MODAL ===== */
@@ -1552,8 +1542,9 @@ html, body {
 
 .project-card-clickable:hover {
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.7);
+    border-color: rgba(100, 200, 255, 0.6);
+    background: rgba(15, 22, 55, 0.92);
 }
 
 .project-expand-hint {
