@@ -3,6 +3,7 @@ import { platform, goBackToCareer, goToContactAndLinks } from '../images/imageIn
 import SpriteCharacter from '../components/SpriteCharacter';
 import NavigationArrows from '../components/NavigationArrows';
 import OrientationDialog from '../components/OrientationDialog';
+import ProjectCard from '../components/ProjectCard';
 import { personalProjectsInfo, personalProjects } from '../data/portfolioData';
 
 export default function PersonalProjectsPage({
@@ -27,33 +28,9 @@ export default function PersonalProjectsPage({
       </div>
 
       <div className="projectsFixedContainerSynaptech">
-        {personalProjects.map((project) => {
-          let sizeClass = 'projectBillboardMed';
-          return (
-            <div
-              key={project.id}
-              className={`projectBillboardFixed ${sizeClass}`}
-            >
-              <h3 className="projectBillboardTitle">{project.title}</h3>
-              <p className="projectBillboardTech">{project.tech}</p>
-              <ul className="projectBillboardHighlights">
-                {project.highlights.map((h, i) => (
-                  <li key={i}>{h}</li>
-                ))}
-              </ul>
-              {project.github && (
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="projectGithubLink"
-                >
-                  View on GitHub →
-                </a>
-              )}
-            </div>
-          );
-        })}
+        {personalProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} sizeClass="projectBillboardMed" />
+        ))}
       </div>
 
       <div className="platformContainer">

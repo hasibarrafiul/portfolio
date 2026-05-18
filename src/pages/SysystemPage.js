@@ -3,6 +3,7 @@ import { platform, goBackToCareer, goToContactAndLinks } from '../images/imageIn
 import SpriteCharacter from '../components/SpriteCharacter';
 import NavigationArrows from '../components/NavigationArrows';
 import OrientationDialog from '../components/OrientationDialog';
+import ProjectCard from '../components/ProjectCard';
 import { sysystemCompany, sysystemProjects } from '../data/portfolioData';
 
 export default function SysystemPage({
@@ -13,7 +14,7 @@ export default function SysystemPage({
   const animationClass = prevPage > pageNumber ? 'slideLeft' : 'slideRight';
 
   return (
-    <div className={`gameProjects ${animationClass} custom-background2`}>
+    <div id="sysystem-page" className={`gameProjects ${animationClass} custom-background2`}>
       <div>
         {isPortrait && (
           <OrientationDialog open={dialogOpen} handleClose={handleDialogClose} />
@@ -39,18 +40,7 @@ export default function SysystemPage({
           if (project.id === 1) sizeClass = 'projectBillboardSlim';
           if (project.id === 2) sizeClass = 'projectBillboardWide';
           return (
-            <div
-              key={project.id}
-              className={`projectBillboardFixed ${sizeClass}`}
-            >
-              <h3 className="projectBillboardTitle">{project.title}</h3>
-              <p className="projectBillboardTech">{project.tech}</p>
-              <ul className="projectBillboardHighlights">
-                {project.highlights.map((h, i) => (
-                  <li key={i}>{h}</li>
-                ))}
-              </ul>
-            </div>
+            <ProjectCard key={project.id} project={project} sizeClass={sizeClass} />
           );
         })}
       </div>

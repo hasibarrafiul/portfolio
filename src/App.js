@@ -73,9 +73,9 @@ function App() {
       if (Math.abs(deltaX) < 30) return;
 
       if (deltaX > 0) {
-        handleMove('right', 'touch');
-      } else {
         handleMove('left', 'touch');
+      } else {
+        handleMove('right', 'touch');
       }
     };
 

@@ -1286,3 +1286,526 @@ html, body {
         font-size: 0.9em;
     }
 }
+
+.contact-icon { font-size: 30px !important; }
+
+/* Specific Mobile Styles for Contact Page (to mimic PC view proportions) */
+@media (max-width: 768px) {
+    #contactPageContainer .certificationsGrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+    #contactPageContainer .certificationCard {
+        padding: 10px;
+    }
+    #contactPageContainer .certBadge {
+        width: 40px;
+        height: 40px;
+    }
+    #contactPageContainer .contact-icon {
+        font-size: 20px !important;
+    }
+    #contactPageContainer .certTitle {
+        font-size: 0.85em;
+    }
+    #contactPageContainer .sectionTitle {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    #contactPageContainer .certificationsGrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+    }
+    #contactPageContainer .certificationCard {
+        padding: 8px;
+    }
+    #contactPageContainer .certBadge {
+        width: 30px;
+        height: 30px;
+    }
+    #contactPageContainer .contact-icon {
+        font-size: 16px !important;
+        margin: 0 auto 4px;
+    }
+    #contactPageContainer .certTitle {
+        font-size: 0.7em;
+        margin: 4px 0 2px 0;
+    }
+    #contactPageContainer .sectionTitle {
+        font-size: 1em;
+        margin-bottom: 2px;
+    }
+}
+
+/* ===== GLOBAL MOBILE SCALING ===== */
+@media (max-width: 1024px) {
+    html { font-size: 13px; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 10px; }
+    .projectBillboardFixed { padding: 10px 12px !important; max-height: 40vh !important; }
+    .projectsFixedContainer, .projectsFixedContainerSynaptech { gap: 10px !important; width: 96% !important; }
+    .companyInfoBox { padding: 8px 12px !important; min-width: unset !important; width: 90% !important; }
+    .projectBillboardTitle { font-size: 1.1em !important; }
+    .projectBillboardTech  { font-size: 0.85em !important; }
+    .projectBillboardHighlights li { font-size: 0.8em !important; }
+    .skillsContainer { width: 90% !important; gap: 10px !important; }
+    .skillBox { padding: 10px 12px !important; }
+    .skillBoxTitle { font-size: 1.1em !important; }
+    .skillTag { font-size: 0.75em !important; padding: 3px 8px !important; }
+    .educationContainer { top: 2% !important; gap: 12px !important; }
+    #contactPageContainer .certificationsGrid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+    #contactPageContainer .certificationCard { padding: 8px !important; }
+    #contactPageContainer .certBadge { width: 35px !important; height: 35px !important; }
+    #contactPageContainer .contact-icon { font-size: 18px !important; }
+    #contactPageContainer .certTitle { font-size: 0.75em !important; }
+    #contactPageContainer .sectionTitle { font-size: 1.1em !important; }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 8px; }
+    .projectsFixedContainer, .projectsFixedContainerSynaptech { flex-direction: column !important; align-items: center !important; top: 30% !important; }
+    .projectBillboardFixed { width: 95% !important; max-height: 28vh !important; }
+    .companyInfoBox { top: 2% !important; width: 95% !important; padding: 6px 10px !important; }
+    .skillsContainer { width: 95% !important; top: 30% !important; }
+    .educationContainer { top: 1% !important; width: 98% !important; padding: 0 6px !important; gap: 8px !important; }
+    #contactPageContainer .certificationsGrid { grid-template-columns: repeat(2, 1fr) !important; gap: 6px !important; }
+    #contactPageContainer .certificationCard { padding: 6px !important; }
+    #contactPageContainer .certBadge { width: 26px !important; height: 26px !important; margin: 0 auto 3px !important; }
+    #contactPageContainer .contact-icon { font-size: 14px !important; }
+    #contactPageContainer .certTitle { font-size: 0.65em !important; margin: 3px 0 !important; }
+    #contactPageContainer .sectionTitle { font-size: 0.95em !important; }
+}
+
+/* ===== GLOBAL MOBILE SCALING - WIDER BREAKPOINTS + HEIGHT QUERIES ===== */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    html { font-size: 12px; }
+    .companyInfoBox { min-width: unset !important; width: 88% !important; padding: 8px 16px !important; }
+    .projectsFixedContainer, .projectsFixedContainerSynaptech { gap: 12px !important; width: 94% !important; }
+    .projectBillboardFixed { padding: 12px 14px !important; }
+}
+
+/* Portrait mobile and smaller */
+@media (max-width: 768px) {
+    html { font-size: 10px; }
+    .projectBillboardFixed { padding: 8px 10px !important; max-height: 38vh !important; }
+    .projectsFixedContainer, .projectsFixedContainerSynaptech { gap: 8px !important; width: 96% !important; }
+    .companyInfoBox { padding: 6px 10px !important; width: 90% !important; }
+    .skillsContainer { width: 90% !important; gap: 10px !important; }
+    .skillBox { padding: 10px 12px !important; }
+    .educationContainer { top: 2% !important; gap: 10px !important; }
+    #contactPageContainer .certificationsGrid { grid-template-columns: repeat(2, 1fr) !important; }
+    #contactPageContainer .certificationCard { padding: 8px !important; }
+    #contactPageContainer .certBadge { width: 30px !important; height: 30px !important; }
+    #contactPageContainer .contact-icon { font-size: 16px !important; }
+    #contactPageContainer .certTitle { font-size: 0.7em !important; }
+}
+
+/* Landscape mobile (short screens, wide) - key fix */
+@media (max-height: 500px) and (max-width: 1024px) {
+    html { font-size: 9px; }
+    .companyInfoBox { top: 1% !important; padding: 4px 10px !important; width: 80% !important; }
+    .companyName { font-size: 1.1em !important; }
+    .companyLocation, .companyPeriod { font-size: 0.75em !important; }
+    .companyRole { font-size: 0.85em !important; }
+    .projectsFixedContainer { top: 32% !important; gap: 8px !important; width: 96% !important; }
+    .projectsFixedContainerSynaptech { top: 30% !important; gap: 8px !important; width: 96% !important; }
+    .projectBillboardFixed { max-height: 45vh !important; padding: 8px 10px !important; }
+    .projectBillboardTitle { font-size: 1em !important; }
+    .projectBillboardTech  { font-size: 0.8em !important; }
+    .projectBillboardHighlights li { font-size: 0.75em !important; margin-bottom: 3px !important; }
+    .skillsContainer { top: 28% !important; }
+    .educationContainer { top: 0% !important; max-height: 72vh !important; gap: 8px !important; }
+    #contactPageContainer .sectionTitle { font-size: 0.9em !important; }
+    #contactPageContainer .certificationsGrid { gap: 6px !important; }
+    #contactPageContainer .certificationCard { padding: 6px !important; }
+    #contactPageContainer .certBadge { width: 24px !important; height: 24px !important; }
+    #contactPageContainer .contact-icon { font-size: 13px !important; }
+    #contactPageContainer .certTitle { font-size: 0.6em !important; }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+    html { font-size: 8px; }
+    .projectsFixedContainer, .projectsFixedContainerSynaptech { flex-direction: column !important; align-items: center !important; top: 32% !important; }
+    .projectBillboardFixed { width: 95% !important; max-height: 25vh !important; }
+    .companyInfoBox { top: 2% !important; width: 95% !important; }
+    .skillsContainer { width: 95% !important; top: 30% !important; }
+    .educationContainer { top: 1% !important; width: 98% !important; padding: 0 6px !important; gap: 6px !important; }
+    #contactPageContainer .certificationsGrid { gap: 5px !important; }
+    #contactPageContainer .certificationCard { padding: 5px !important; }
+    #contactPageContainer .certBadge { width: 22px !important; height: 22px !important; }
+    #contactPageContainer .contact-icon { font-size: 12px !important; }
+    #contactPageContainer .certTitle { font-size: 0.6em !important; }
+}
+
+/* ===== FONT SIZE EXCEPTIONS: Homepage & Contact Page ===== */
+/* Restore original font sizes on homepage regardless of global mobile scaling */
+@media (max-width: 1024px) {
+    .mainMenu { font-size: 16px; }
+    .mainMenu .myName  { font-size: 2rem; }
+    .mainMenu .myTitle { font-size: 1.17rem; }
+    .mainMenu .myDescription { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+    .mainMenu { font-size: 16px; }
+    .mainMenu .myName  { font-size: 2rem; }
+    .mainMenu .myTitle { font-size: 1.17rem; }
+    .mainMenu .myDescription { font-size: 1rem; }
+}
+
+@media (max-height: 500px) and (max-width: 1024px) {
+    .mainMenu { font-size: 16px; }
+    .mainMenu .myName  { font-size: 2rem; }
+    .mainMenu .myTitle { font-size: 1.17rem; }
+    .mainMenu .myDescription { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .mainMenu { font-size: 16px; }
+    .mainMenu .myName  { font-size: 2rem; }
+    .mainMenu .myTitle { font-size: 1.17rem; }
+    .mainMenu .myDescription { font-size: 1rem; }
+}
+
+/* Restore original font sizes on contact page regardless of global mobile scaling */
+@media (max-width: 1024px) {
+    #contactPageContainer { font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+    #contactPageContainer { font-size: 16px; }
+}
+
+@media (max-height: 500px) and (max-width: 1024px) {
+    #contactPageContainer { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+    #contactPageContainer { font-size: 16px; }
+}
+
+/* ===== FONT SIZE FIX: Lock homepage & contact text to absolute px values ===== */
+/* Override the rem values with fixed px so they ignore the global html font-size reduction */
+@media (max-width: 1024px) {
+    .mainMenu .myName        { font-size: 32px !important; }
+    .mainMenu .myTitle       { font-size: 20px !important; }
+    .mainMenu .myDescription { font-size: 16px !important; }
+}
+
+@media (max-width: 768px) {
+    .mainMenu .myName        { font-size: 32px !important; }
+    .mainMenu .myTitle       { font-size: 20px !important; }
+    .mainMenu .myDescription { font-size: 16px !important; }
+}
+
+@media (max-height: 500px) and (max-width: 1024px) {
+    .mainMenu .myName        { font-size: 32px !important; }
+    .mainMenu .myTitle       { font-size: 20px !important; }
+    .mainMenu .myDescription { font-size: 16px !important; }
+}
+
+@media (max-width: 480px) {
+    .mainMenu .myName        { font-size: 28px !important; }
+    .mainMenu .myTitle       { font-size: 18px !important; }
+    .mainMenu .myDescription { font-size: 14px !important; }
+}
+
+/* Contact page: all text elements locked to their original sizes */
+@media (max-width: 1024px) {
+    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
+    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
+    #contactPageContainer .myName            { font-size: 32px !important; }
+}
+
+@media (max-width: 768px) {
+    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
+    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
+    #contactPageContainer .myName            { font-size: 32px !important; }
+}
+
+@media (max-height: 500px) and (max-width: 1024px) {
+    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
+    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
+    #contactPageContainer .myName            { font-size: 32px !important; }
+}
+
+@media (max-width: 480px) {
+    #contactPageContainer .sectionTitle      { font-size: 1.8em !important; }
+    #contactPageContainer .certTitle         { font-size: 0.95em !important; }
+    #contactPageContainer .myName            { font-size: 32px !important; }
+}
+
+/* ===== PROJECT CARD - CLICKABLE & EXPAND MODAL ===== */
+.project-card-clickable {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+}
+
+.project-card-clickable:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.project-expand-hint {
+    display: block;
+    margin-top: 10px;
+    font-family: "Jaro", sans-serif;
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: right;
+    letter-spacing: 0.03em;
+    text-shadow: none;
+    transition: color 0.2s;
+}
+
+.project-card-clickable:hover .project-expand-hint {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== MODAL OVERLAY ===== */
+.project-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: modalFadeIn 0.25s ease forwards;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.project-modal-content {
+    position: relative;
+    background: rgba(30, 30, 60, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 40px 44px 36px 44px;
+    width: 90%;
+    max-width: 760px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+    animation: modalSlideUp 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(40px) scale(0.95); opacity: 0; }
+    to   { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+/* Close button */
+.project-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.project-modal-close:hover {
+    background: rgba(255, 80, 80, 0.4);
+    transform: scale(1.15);
+}
+
+/* Modal text */
+.project-modal-title {
+    font-family: "Jaro", sans-serif;
+    font-size: 1.6em;
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000;
+    padding-right: 32px; /* avoid overlap with close btn */
+    line-height: 1.3;
+}
+
+.project-modal-tech {
+    font-family: "Jaro", sans-serif;
+    font-size: 1em;
+    color: rgba(255, 200, 100, 0.9);
+    text-shadow: -1px -1px 1px #000;
+    margin: 0 0 18px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-modal-highlights {
+    list-style: disc;
+    padding-left: 22px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-modal-highlights li {
+    font-family: "Jaro", sans-serif;
+    font-size: 1em;
+    color: #fff;
+    text-shadow: -1px -1px 1px #000;
+    line-height: 1.5;
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+    .project-modal-content {
+        padding: 30px 20px 24px 20px;
+        max-height: 85vh;
+        width: 94%;
+    }
+    .project-modal-title { font-size: 1.3em; }
+    .project-modal-tech  { font-size: 0.9em; }
+    .project-modal-highlights li { font-size: 0.9em; }
+}
+
+@media (max-height: 500px) and (max-width: 1024px) {
+    .project-modal-content {
+        padding: 20px 16px 16px 16px;
+        max-height: 90vh;
+        width: 96%;
+        border-radius: 14px;
+    }
+    .project-modal-title { font-size: 1.1em; }
+    .project-modal-highlights li { font-size: 0.85em; line-height: 1.3; }
+    .project-modal-highlights { gap: 8px; }
+}
+
+/* ===== PROJECT MODAL - FIXED PX FONT SIZES (immune to global mobile scaling) ===== */
+.project-modal-content {
+    font-size: 16px !important; /* reset base so all em children calculate from 16px */
+}
+
+.project-modal-title {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+}
+
+.project-modal-tech {
+    font-size: 15px !important;
+}
+
+.project-modal-highlights li {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+.project-modal-highlights {
+    gap: 14px !important;
+}
+
+/* Slightly smaller on very small phones, but still readable */
+@media (max-width: 480px) {
+    .project-modal-title {
+        font-size: 18px !important;
+    }
+    .project-modal-tech {
+        font-size: 13px !important;
+    }
+    .project-modal-highlights li {
+        font-size: 12px !important;
+    }
+}
+
+/* ===== SYSystem page: fix company info / project card overlap on mobile ===== */
+@media (max-width: 1024px) {
+    #sysystem-page .projectsFixedContainer {
+        top: 46% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #sysystem-page .projectsFixedContainer {
+        top: 50% !important;
+    }
+}
+
+@media (max-height: 500px) and (max-width: 1024px) {
+    #sysystem-page .projectsFixedContainer {
+        top: 44% !important;
+    }
+    #sysystem-page .companyInfoBox {
+        top: 1% !important;
+        padding: 3px 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #sysystem-page .projectsFixedContainer {
+        top: 52% !important;
+    }
+}
+
+/* ===== PROJECT MODAL - LARGER FONT SIZES FOR PC & ALL SCREENS ===== */
+.project-modal-title {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+}
+
+.project-modal-tech {
+    font-size: 18px !important;
+    margin-bottom: 20px !important;
+}
+
+.project-modal-highlights {
+    gap: 16px !important;
+}
+
+.project-modal-highlights li {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .project-modal-title  { font-size: 24px !important; }
+    .project-modal-tech   { font-size: 16px !important; }
+    .project-modal-highlights li { font-size: 15px !important; }
+}
+
+/* Mobile portrait */
+@media (max-width: 768px) {
+    .project-modal-title  { font-size: 21px !important; }
+    .project-modal-tech   { font-size: 15px !important; }
+    .project-modal-highlights li { font-size: 14px !important; }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (max-width: 1024px) {
+    .project-modal-title  { font-size: 18px !important; }
+    .project-modal-tech   { font-size: 13px !important; }
+    .project-modal-highlights li { font-size: 13px !important; line-height: 1.4 !important; }
+    .project-modal-highlights { gap: 10px !important; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .project-modal-title  { font-size: 19px !important; }
+    .project-modal-tech   { font-size: 13px !important; }
+    .project-modal-highlights li { font-size: 13px !important; }
+}
