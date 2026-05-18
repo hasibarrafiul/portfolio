@@ -2,13 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import { sprite as spriteStill, spriteRun } from '../images/imageIndex';
 import {
   updateBillboardPositions,
-  updateCertificatePositions,
   updateBillboardPositionsTouch,
-  updateCertificatePositionsTouch,
   getSpriteMove,
   checkPageTransition,
-  generateInitialBillboardPositions,
-  generateInitialCertificatePositions
+  generateInitialBillboardPositions
 } from '../helpers/navigationHelpers';
 
 export default function useGameNavigation() {
@@ -19,14 +16,9 @@ export default function useGameNavigation() {
   const [prevPage, setPrevPage] = useState(0);
   const [isGamePaused, setIsGamePaused] = useState(false);
 
-  // Billboard positions (Page 4)
+  // Billboard positions (SYSystem page)
   const [billboardPositions, setBillboardPositions] = useState(
     generateInitialBillboardPositions()
-  );
-
-  // Certificate positions (Page 5)
-  const [certificatePositions, setCertificatePositions] = useState(
-    generateInitialCertificatePositions()
   );
 
   // Common move handler for all input types
@@ -36,18 +28,12 @@ export default function useGameNavigation() {
 
     setSpriteImage(spriteRun);
 
-    // Update billboard or certificate positions
+    // Update billboard positions on SYSystem page (page 3)
     if (pageNumber === 3 && !isGamePaused) {
-      setBillboardPositions(prev => 
+      setBillboardPositions(prev =>
         isKeyboardOrWheel
           ? updateBillboardPositions(prev, direction)
           : updateBillboardPositionsTouch(prev, direction)
-      );
-    } else if (pageNumber === 4 && !isGamePaused) {
-      setCertificatePositions(prev =>
-        isKeyboardOrWheel
-          ? updateCertificatePositions(prev, direction)
-          : updateCertificatePositionsTouch(prev, direction)
       );
     }
 
@@ -64,6 +50,15 @@ export default function useGameNavigation() {
       setMirror(true);
     }
   }, [pageNumber, isGamePaused]);
+
+  // Jump directly to a page (used by PageMenu)
+  const jumpToPage = useCallback((targetPage) => {
+    if (targetPage === pageNumber) return;
+    setPrevPage(pageNumber);
+    setPageNumber(targetPage);
+    setSpritePositionX(targetPage > pageNumber ? 10 : 90);
+    setSpriteImage(spriteRun);
+  }, [pageNumber]);
 
   // Page transition effect
   useEffect(() => {
@@ -92,7 +87,6 @@ export default function useGameNavigation() {
     prevPage,
     isGamePaused,
     billboardPositions,
-    certificatePositions,
     // Setters
     setPageNumber,
     setPrevPage,
@@ -101,6 +95,7 @@ export default function useGameNavigation() {
     setSpriteImage,
     setMirror,
     // Handlers
-    handleMove
+    handleMove,
+    jumpToPage
   };
 }

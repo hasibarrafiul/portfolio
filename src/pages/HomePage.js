@@ -24,7 +24,7 @@ export default function HomePage({
           <p className="myDescription">
             Experienced in full-stack development with React, Node.js, Python and other modern technologies.
           </p>
-          <p className="myDescription">I currently live in Tokyo, Japan.</p>
+          <p className="myDescription">I currently live in Tokyo, Japan. I also have a passion for game development and enjoy exploring it as a creative outlet.</p>
         </div>
       </div>
       <div className="platformContainer">

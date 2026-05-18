@@ -1,8 +1,8 @@
 // Personal Information
 export const personalInfo = {
   name: "Hasib Ar Rafiul Fahim",
-  title: "Software Engineer and Game Programmer",
-  description: "I am passionate about software engineering and game programming. I love creating games and solving problems.",
+  title: "Software Engineer",
+  description: "I build production-grade SaaS and ERP systems. I also have a passion for game development and enjoy exploring it as a creative outlet.",
   location: "Tokyo, Japan"
 };
 

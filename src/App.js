@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import useGameNavigation from './hooks/useGameNavigation';
 import useOrientation from './hooks/useOrientation';
+import LoadingScreen from './components/LoadingScreen';
+import PageMenu from './components/PageMenu';
 import HomePage from './pages/HomePage';
 import SkillCategoriesPage from './pages/SkillCategoriesPage';
 import SysystemPage from './pages/SysystemPage';
@@ -11,10 +13,12 @@ import EducationPage from './pages/EducationPage';
 import ContactPage from './pages/ContactPage';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   const {
     spritePositionX, mirror, spriteImage, pageNumber, prevPage,
     billboardPositions,
-    setIsGamePaused, handleMove
+    setIsGamePaused, handleMove, jumpToPage
   } = useGameNavigation();
 
   const { isPortrait, dialogOpen, handleDialogClose } = useOrientation();
@@ -88,40 +92,33 @@ function App() {
   }, [handleMove]);
 
   // Button click handlers
-  const handleSwipeRightClick = () => {
-    handleMove('right', 'touch');
-  };
+  const handleSwipeRightClick = () => handleMove('right', 'touch');
+  const handleSwipeLeftClick  = () => handleMove('left',  'touch');
 
-  const handleSwipeLeftClick = () => {
-    handleMove('left', 'touch');
+  if (loading) {
+    return <LoadingScreen onDone={() => setLoading(false)} />;
+  }
+
+  const sharedProps = {
+    spriteImage, spritePositionX, mirror,
+    isPortrait, dialogOpen, handleDialogClose,
+    prevPage, pageNumber,
   };
 
   return (
     <div className="custom-background">
+      <PageMenu currentPage={pageNumber} onNavigate={jumpToPage} />
+
       {pageNumber === 1 && (
         <HomePage
-          spriteImage={spriteImage}
-          spritePositionX={spritePositionX}
-          mirror={mirror}
-          isPortrait={isPortrait}
-          dialogOpen={dialogOpen}
-          handleDialogClose={handleDialogClose}
-          prevPage={prevPage}
-          pageNumber={pageNumber}
+          {...sharedProps}
           handleSwipeRightClick={handleSwipeRightClick}
         />
       )}
 
       {pageNumber === 2 && (
         <SkillCategoriesPage
-          spriteImage={spriteImage}
-          spritePositionX={spritePositionX}
-          mirror={mirror}
-          isPortrait={isPortrait}
-          dialogOpen={dialogOpen}
-          handleDialogClose={handleDialogClose}
-          prevPage={prevPage}
-          pageNumber={pageNumber}
+          {...sharedProps}
           handleSwipeRightClick={handleSwipeRightClick}
           handleSwipeLeftClick={handleSwipeLeftClick}
         />
@@ -129,14 +126,7 @@ function App() {
 
       {pageNumber === 3 && (
         <SysystemPage
-          spriteImage={spriteImage}
-          spritePositionX={spritePositionX}
-          mirror={mirror}
-          isPortrait={isPortrait}
-          dialogOpen={dialogOpen}
-          handleDialogClose={handleDialogClose}
-          prevPage={prevPage}
-          pageNumber={pageNumber}
+          {...sharedProps}
           handleSwipeRightClick={handleSwipeRightClick}
           handleSwipeLeftClick={handleSwipeLeftClick}
           billboardPositions={billboardPositions}
@@ -145,14 +135,7 @@ function App() {
 
       {pageNumber === 4 && (
         <SynapTechPage
-          spriteImage={spriteImage}
-          spritePositionX={spritePositionX}
-          mirror={mirror}
-          isPortrait={isPortrait}
-          dialogOpen={dialogOpen}
-          handleDialogClose={handleDialogClose}
-          prevPage={prevPage}
-          pageNumber={pageNumber}
+          {...sharedProps}
           handleSwipeRightClick={handleSwipeRightClick}
           handleSwipeLeftClick={handleSwipeLeftClick}
         />
@@ -160,14 +143,7 @@ function App() {
 
       {pageNumber === 5 && (
         <PersonalProjectsPage
-          spriteImage={spriteImage}
-          spritePositionX={spritePositionX}
-          mirror={mirror}
-          isPortrait={isPortrait}
-          dialogOpen={dialogOpen}
-          handleDialogClose={handleDialogClose}
-          prevPage={prevPage}
-          pageNumber={pageNumber}
+          {...sharedProps}
           handleSwipeRightClick={handleSwipeRightClick}
           handleSwipeLeftClick={handleSwipeLeftClick}
         />
@@ -175,14 +151,7 @@ function App() {
 
       {pageNumber === 6 && (
         <EducationPage
-          spriteImage={spriteImage}
-          spritePositionX={spritePositionX}
-          mirror={mirror}
-          isPortrait={isPortrait}
-          dialogOpen={dialogOpen}
-          handleDialogClose={handleDialogClose}
-          prevPage={prevPage}
-          pageNumber={pageNumber}
+          {...sharedProps}
           handleSwipeRightClick={handleSwipeRightClick}
           handleSwipeLeftClick={handleSwipeLeftClick}
         />
@@ -190,14 +159,7 @@ function App() {
 
       {pageNumber === 7 && (
         <ContactPage
-          spriteImage={spriteImage}
-          spritePositionX={spritePositionX}
-          mirror={mirror}
-          isPortrait={isPortrait}
-          dialogOpen={dialogOpen}
-          handleDialogClose={handleDialogClose}
-          prevPage={prevPage}
-          pageNumber={pageNumber}
+          {...sharedProps}
           handleSwipeLeftClick={handleSwipeLeftClick}
         />
       )}
