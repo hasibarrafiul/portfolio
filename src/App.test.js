@@ -26,14 +26,14 @@ test('renders the developer title on homepage', () => {
   expect(title).toBeInTheDocument();
 });
 
-test('renders the platform image', () => {
+test('renders the loading screen image', () => {
   render(<App />);
-  const platform = screen.getByAltText(/Platform/i);
-  expect(platform).toBeInTheDocument();
+  const character = screen.getByAltText(/Character/i);
+  expect(character).toBeInTheDocument();
 });
 
-test('renders the sprite character', () => {
+test('renders the sprite character on loading screen', () => {
   render(<App />);
-  const sprite = screen.getByAltText(/Sprite/i);
-  expect(sprite).toBeInTheDocument();
+  const character = screen.getByAltText(/Character/i);
+  expect(character).toBeInTheDocument();
 });
