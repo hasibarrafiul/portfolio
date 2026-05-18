@@ -61,7 +61,7 @@ export function getSpriteMove(isKeyboardOrWheel, pageNumber, direction) {
  * Page transition checker - determines if sprite position should trigger a page change
  */
 export function checkPageTransition(spritePositionX, currentPage) {
-  if (spritePositionX > 90 && currentPage < 6) {
+  if (spritePositionX > 90 && currentPage < 7) {
     return currentPage + 1; // go forward
   }
   if (spritePositionX < 10 && currentPage > 1) {

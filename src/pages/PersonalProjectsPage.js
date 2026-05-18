@@ -41,6 +41,16 @@ export default function PersonalProjectsPage({
                   <li key={i}>{h}</li>
                 ))}
               </ul>
+              {project.github && (
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="projectGithubLink"
+                >
+                  View on GitHub →
+                </a>
+              )}
             </div>
           );
         })}

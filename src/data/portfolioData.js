@@ -107,7 +107,7 @@ export const personalProjects = [
       "Built and deployed containerized Django microservices on Azure Kubernetes Service using Terraform for infrastructure provisioning and GitOps-based CI/CD (GitHub Actions + Argo CD) for automated, zero-downtime deployments.",
       "Implemented event-driven inter-service communication via RabbitMQ, JWT-based authentication, Horizontal Pod Autoscaling, and comprehensive monitoring with Prometheus/Grafana for production stability."
     ],
-    github: "GITHUB"
+    github: "https://github.com/hasibarrafiul/k8s-ci-cd-django-microservices"
   },
   {
     id: 1,
@@ -117,7 +117,63 @@ export const personalProjects = [
       "Built a lightweight always-on-top Windows overlay that captures any screen region, performs OCR via Windows native WinRT engine, and translates text in real time between English and Japanese.",
       "Designed a minimal floating UI (draggable mini-button → expandable panel) with per-pixel transparency, taskbar hiding, and cached screenshot re-processing; leveraged local LLMs via Ollama to accelerate development."
     ],
-    github: "GITHUB"
+    github: "https://github.com/hasibarrafiul/screenTranslator-windows-python-OCR"
+  }
+];
+
+// Education, Certifications & Languages (Page 6)
+export const educationInfo = {
+  title: "Education & Certifications"
+};
+
+export const educationData = [
+  {
+    id: 1,
+    degree: "BSc in Computer Science and Engineering",
+    institution: "East West University",
+    year: "2022",
+    specialization: "Major: Software Engineering; AI & Data Science"
+  }
+];
+
+export const certificationsData = [
+  {
+    id: 1,
+    title: "MetLife Hackathon (Tokyo)",
+    achievement: "1st Place",
+    date: "Feb 2026"
+  },
+  {
+    id: 2,
+    title: "ITEE FE Certification",
+    achievement: "Full Passer",
+    date: "Apr 2022"
+  }
+];
+
+export const languagesData = [
+  { id: 1, language: "Bangla", proficiency: "Native" },
+  { id: 2, language: "English", proficiency: "Business Level" },
+  { id: 3, language: "Japanese", proficiency: "Conversational Level" },
+  { id: 4, language: "Hindi", proficiency: "Fluent" }
+];
+
+export const publicationsData = [
+  {
+    id: 1,
+    title: "Augmented Reality and Virtual Reality in learning Solar System",
+    institution: "East West University",
+    date: "Dec 12, 2022",
+    description: "The purpose of this study was to determine how well-augmented reality and virtual reality technology may improve the comprehension of the solar system among elementary school children. Twenty students were divided into two groups, one for conventional classroom instruction and the other for augmented reality and virtual reality. In contrast to the augmented reality and virtual reality group, which utilized two apps to engage in interactive solar system exploration, the traditional group got classroom instruction using textbooks. Both Unity and Unreal engine were used to create the applications. To gauge students' understanding of the solar system, pre-and post-tests were given; meanwhile, a survey was employed to gauge their interest in the subject. The outcomes revealed that when compared to the traditional group, the augmented reality and virtual reality groups had significantly higher post-test scores and indicated better levels of engagement. The study emphasizes how augmented reality and virtual reality technologies might improve students' scientific learning outcomes and motivation.",
+    url: "http://dspace.ewubd.edu:8080/handle/123456789/4349"
+  },
+  {
+    id: 2,
+    title: "A Sustainable E-Waste Management System for Bangladesh",
+    institution: "Springer Link",
+    date: "Sep 1, 2022",
+    description: "The rapid rise in e-waste in Bangladesh, due to inadequate infrastructure and policies, poses environmental risks, necessitating sustainable management solutions and better policy enforcement.",
+    url: "https://link.springer.com/chapter/10.1007/978-3-031-34622-4_58?fbclid=IwAR01k_cp0KYsgoXCWUXZeMUiuAOOiEhyjFvJ7rfTc3su8ENQIQmbBocZidE"
   }
 ];
 

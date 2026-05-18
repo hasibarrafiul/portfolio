@@ -7,6 +7,7 @@ import SkillCategoriesPage from './pages/SkillCategoriesPage';
 import SysystemPage from './pages/SysystemPage';
 import SynapTechPage from './pages/SynapTechPage';
 import PersonalProjectsPage from './pages/PersonalProjectsPage';
+import EducationPage from './pages/EducationPage';
 import ContactPage from './pages/ContactPage';
 
 function App() {
@@ -173,6 +174,21 @@ function App() {
       )}
 
       {pageNumber === 6 && (
+        <EducationPage
+          spriteImage={spriteImage}
+          spritePositionX={spritePositionX}
+          mirror={mirror}
+          isPortrait={isPortrait}
+          dialogOpen={dialogOpen}
+          handleDialogClose={handleDialogClose}
+          prevPage={prevPage}
+          pageNumber={pageNumber}
+          handleSwipeRightClick={handleSwipeRightClick}
+          handleSwipeLeftClick={handleSwipeLeftClick}
+        />
+      )}
+
+      {pageNumber === 7 && (
         <ContactPage
           spriteImage={spriteImage}
           spritePositionX={spritePositionX}
