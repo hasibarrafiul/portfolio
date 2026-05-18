@@ -1,8 +1,9 @@
 import React from 'react';
-import { platform, backToMainScreen, gotoProjects as goToProjects } from '../images/imageIndex';
+import { platform } from '../images/imageIndex';
 import SpriteCharacter from '../components/SpriteCharacter';
 import NavigationArrows from '../components/NavigationArrows';
 import OrientationDialog from '../components/OrientationDialog';
+import DirectionSign from '../components/DirectionSign';
 import { skillCategories } from '../data/portfolioData';
 
 export default function SkillCategoriesPage({
@@ -32,8 +33,8 @@ export default function SkillCategoriesPage({
       </div>
       <div className="platformContainer">
         <img src={platform} alt="Platform" className="platform" />
-        <img src={backToMainScreen} alt="Back To Main Screen" className="backWordSign" />
-        <img src={goToProjects} alt="Go To Projects" className="forwardSign" />
+        <DirectionSign direction="left" pageName="Home" />
+        <DirectionSign direction="right" pageName="SYSystem" />
         <NavigationArrows
           onSwipeRight={handleSwipeRightClick}
           onSwipeLeft={handleSwipeLeftClick}

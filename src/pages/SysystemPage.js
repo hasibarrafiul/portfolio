@@ -1,9 +1,10 @@
 import React from 'react';
-import { platform, goBackToCareer, goToContactAndLinks } from '../images/imageIndex';
+import { platform } from '../images/imageIndex';
 import SpriteCharacter from '../components/SpriteCharacter';
 import NavigationArrows from '../components/NavigationArrows';
 import OrientationDialog from '../components/OrientationDialog';
 import ProjectCard from '../components/ProjectCard';
+import DirectionSign from '../components/DirectionSign';
 import { sysystemCompany, sysystemProjects } from '../data/portfolioData';
 
 export default function SysystemPage({
@@ -47,8 +48,8 @@ export default function SysystemPage({
 
       <div className="platformContainer">
         <img src={platform} alt="Platform" className="platform" />
-        <img src={goBackToCareer} alt="Go Back To Skill Highlight" className="backWordSign" />
-        <img src={goToContactAndLinks} alt="Go To SynapTech" className="forwardSign" />
+        <DirectionSign direction="left" pageName="Skill Highlights" />
+        <DirectionSign direction="right" pageName="SynapTech" />
         <NavigationArrows
           onSwipeRight={handleSwipeRightClick}
           onSwipeLeft={handleSwipeLeftClick}

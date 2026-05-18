@@ -1,9 +1,10 @@
 import React from 'react';
-import { platform, goBackToCareer, goToContactAndLinks } from '../images/imageIndex';
+import { platform } from '../images/imageIndex';
 import SpriteCharacter from '../components/SpriteCharacter';
 import NavigationArrows from '../components/NavigationArrows';
 import OrientationDialog from '../components/OrientationDialog';
 import ProjectCard from '../components/ProjectCard';
+import DirectionSign from '../components/DirectionSign';
 import { personalProjectsInfo, personalProjects } from '../data/portfolioData';
 
 export default function PersonalProjectsPage({
@@ -35,8 +36,8 @@ export default function PersonalProjectsPage({
 
       <div className="platformContainer">
         <img src={platform} alt="Platform" className="platform" />
-        <img src={goBackToCareer} alt="Go Back To SynapTech" className="backWordSign" />
-        <img src={goToContactAndLinks} alt="Go To Certificates" className="forwardSign" />
+        <DirectionSign direction="left" pageName="SynapTech" />
+        <DirectionSign direction="right" pageName="Education" />
         <NavigationArrows
           onSwipeRight={handleSwipeRightClick}
           onSwipeLeft={handleSwipeLeftClick}

@@ -1,8 +1,9 @@
 import React from 'react';
-import { platform, goBackToCareer, goToContactAndLinks } from '../images/imageIndex';
+import { platform } from '../images/imageIndex';
 import SpriteCharacter from '../components/SpriteCharacter';
 import NavigationArrows from '../components/NavigationArrows';
 import OrientationDialog from '../components/OrientationDialog';
+import DirectionSign from '../components/DirectionSign';
 import { educationData, certificationsData, languagesData, publicationsData } from '../data/portfolioData';
 
 export default function EducationPage({
@@ -85,8 +86,8 @@ export default function EducationPage({
 
       <div className="platformContainer">
         <img src={platform} alt="Platform" className="platform" />
-        <img src={goBackToCareer} alt="Go Back" className="backWordSign" />
-        <img src={goToContactAndLinks} alt="Go To Certificates" className="forwardSign" />
+        <DirectionSign direction="left" pageName="Personal Projects" />
+        <DirectionSign direction="right" pageName="Contact & Links" />
         <NavigationArrows
           onSwipeRight={handleSwipeRightClick}
           onSwipeLeft={handleSwipeLeftClick}

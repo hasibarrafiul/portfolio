@@ -1,7 +1,8 @@
 import React from 'react';
-import { platform, gate, swipeRight, seeMyCareer } from '../images/imageIndex';
+import { platform, gate, swipeRight } from '../images/imageIndex';
 import SpriteCharacter from '../components/SpriteCharacter';
 import OrientationDialog from '../components/OrientationDialog';
+import DirectionSign from '../components/DirectionSign';
 
 export default function HomePage({
   spriteImage, spritePositionX, mirror, isPortrait, dialogOpen,
@@ -35,7 +36,7 @@ export default function HomePage({
           className="gate"
           onClick={handleSwipeRightClick}
         />
-        <img src={seeMyCareer} alt="See My Career" className="forwardSign" />
+        <DirectionSign direction="right" pageName="Skill Highlights" />
         <SpriteCharacter
           spriteImage={spriteImage}
           positionX={spritePositionX}

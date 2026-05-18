@@ -1,7 +1,8 @@
 import React from 'react';
-import { platform, gate, swipeLeft, goBackToLicenceAndCertifications } from '../images/imageIndex';
+import { platform, gate, swipeLeft } from '../images/imageIndex';
 import SpriteCharacter from '../components/SpriteCharacter';
 import OrientationDialog from '../components/OrientationDialog';
+import DirectionSign from '../components/DirectionSign';
 import { contactLinks } from '../data/portfolioData';
 import Email from '@mui/icons-material/Email';
 import GitHub from '@mui/icons-material/GitHub';
@@ -83,11 +84,7 @@ export default function ContactPage({
           className="gate2"
           onClick={handleSwipeLeftClick}
         />
-        <img
-          src={goBackToLicenceAndCertifications}
-          alt="Go Back"
-          className="backWordSign"
-        />
+        <DirectionSign direction="left" pageName="Education" />
         <SpriteCharacter
           spriteImage={spriteImage}
           positionX={spritePositionX}
